@@ -1,13 +1,12 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <time-line msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+  <section>
+    <time-line/>
+  </section>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import TimeLine from '@/components/TimeLine.vue'; // @ is an alias to /src
+import TimeLine from '@/components/TimeLine.vue';
 
 @Component({
   components: {
