@@ -39,6 +39,7 @@ const events = [
 ];
 
 describe('TimeLine.vue', () => {
+
     beforeEach(() => {
         MockedTimelineApi.restore();
         MockedTimelineApi.mock('getEvents', events);
@@ -80,6 +81,31 @@ describe('TimeLine.vue', () => {
                     return ! event.classes().includes('condensed');
                 });
             expect(nonCondensedEvents).toHaveLength(2);
+
+            done();
+        });
+    });
+
+    it('changes event direction after an uncondensed event', (done) => {
+
+        const wrapper = shallowMount(TimeLine, {
+            propsData: {
+                timelineApi: MockedTimelineApi.getMockInstance(),
+            },
+        });
+
+        wrapper.vm.$nextTick(() => {
+
+            let expectation = 'right';
+            const pageEvents = wrapper.findAll('div.event');
+
+            for (let i = 0; i < pageEvents.length; i++) {
+                if (! pageEvents.at(i).classes().includes('condensed')) {
+                    expectation = (expectation === 'right' ? 'left' : 'right');
+                }
+
+                expect(pageEvents.at(i).classes()).toContain(expectation);
+            }
 
             done();
         });

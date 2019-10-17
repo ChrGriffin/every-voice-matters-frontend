@@ -1,7 +1,7 @@
 <template>
     <div class="timeline">
         <div class="row" v-for="event in events">
-            <div :class="'event left' + (event.condensed ? ' condensed' : '')">
+            <div :class="generateEventClassName(event)">
                 <h3>{{ event.name }}</h3>
                 <p>{{ event.text }}</p>
             </div>
@@ -28,6 +28,29 @@
         public getEvents(): void {
             this.events = this.timelineApi
                 .getEvents();
+        }
+
+        public generateEventClassName(event: Event): string {
+            let classname = 'event ';
+            if (event.condensed) {
+                classname += 'condensed ';
+            }
+
+            const eventIndex = this.events.indexOf(event);
+            let direction = 'right';
+
+            let currentIndex = 0;
+            do {
+                if (! this.events[currentIndex].condensed) {
+                    direction = (direction === 'right' ? 'left' : 'right');
+                }
+
+                currentIndex++;
+            }
+            while(eventIndex >= currentIndex);
+
+            classname += direction;
+            return classname;
         }
     }
 </script>
