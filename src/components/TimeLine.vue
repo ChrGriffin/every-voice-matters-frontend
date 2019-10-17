@@ -62,7 +62,7 @@
     $eventToTimelineMargin: 50px;
 
     $eventDotSize: 50px;
-    $condensedEventDotSize: 30px;
+    $condensedEventDotSize: 25px;
 
     .timeline {
         position: relative;
@@ -75,7 +75,7 @@
             bottom: 0;
             left: calc(50% - (#{$timelineWidth} / 2));
             width: $timelineWidth;
-            background: -webkit-linear-gradient(top, rgba(128, 128, 128 ,0) 1%, rgba(128, 128, 128, 1) 8%, rgba(128, 128, 128, 1) 92%, rgba(128, 128, 128,0) 99%);
+            background: -webkit-linear-gradient(top, rgba($red, 0) 1%, rgba($red, 1) 8%, rgba($red, 1) 92%, rgba($red, 0) 99%);
             z-index: 1;
         }
 
@@ -89,6 +89,13 @@
                     margin-top: 2rem;
                 }
             }
+
+            &:last-child {
+
+                .event {
+                    margin-bottom: 2rem;
+                }
+            }
         }
     }
 
@@ -98,7 +105,7 @@
         padding: 1rem;
         width: calc(50% - #{$eventToTimelineMargin});
         background-color: $white;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.5);
         margin-top: -2rem;
 
@@ -109,7 +116,7 @@
             height: $eventDotSize;
             background-color: $backgroundColor;
             border-radius: $eventDotSize / 2;
-            border: $timelineWidth solid grey;
+            border: $timelineWidth solid $red;
             position: absolute;
             top: calc(50% - (#{$eventDotSize} / 2));
         }
