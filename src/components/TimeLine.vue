@@ -1,7 +1,7 @@
 <template>
     <div class="timeline">
         <div class="row" v-for="event in events">
-            <div class="event left">
+            <div :class="'event left' + (event.condensed ? ' condensed' : '')">
                 <h3>{{ event.name }}</h3>
                 <p>{{ event.text }}</p>
             </div>

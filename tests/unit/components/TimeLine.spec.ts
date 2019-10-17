@@ -24,16 +24,27 @@ const events = [
         condensed: true,
         time: new Date('October 9, 2019 11:13:00'),
     },
+    {
+        name: 'Cirilla',
+        text: '',
+        condensed: false,
+        time: new Date('October 9, 2019 11:47:00'),
+    },
+    {
+        name: 'Emhyr var Emris',
+        text: '',
+        condensed: true,
+        time: new Date('October 10, 2019 11:13:00'),
+    },
 ];
 
 describe('TimeLine.vue', () => {
     beforeEach(() => {
         MockedTimelineApi.restore();
+        MockedTimelineApi.mock('getEvents', events);
     });
 
     it('renders a timeline of events from the API', (done) => {
-
-        MockedTimelineApi.mock('getEvents', events);
 
         const wrapper = shallowMount(TimeLine, {
             propsData: {
@@ -43,10 +54,32 @@ describe('TimeLine.vue', () => {
 
         wrapper.vm.$nextTick(() => {
             const pageEvents = wrapper.findAll('div.event');
-            expect(pageEvents).toHaveLength(3);
+            expect(pageEvents).toHaveLength(5);
             events.forEach((event) => {
                 expect(wrapper.text()).toContain(event.name);
             });
+
+            done();
+        });
+    });
+
+    it('displays events as condensed or not', (done) => {
+
+        const wrapper = shallowMount(TimeLine, {
+            propsData: {
+                timelineApi: MockedTimelineApi.getMockInstance(),
+            },
+        });
+
+        wrapper.vm.$nextTick(() => {
+            const condensedEvents = wrapper.findAll('div.event.condensed');
+            expect(condensedEvents).toHaveLength(3);
+
+            const nonCondensedEvents = wrapper.findAll('div.event')
+                .filter((event) => {
+                    return ! event.classes().includes('condensed');
+                });
+            expect(nonCondensedEvents).toHaveLength(2);
 
             done();
         });
