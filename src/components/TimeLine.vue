@@ -82,6 +82,13 @@
         .row {
             position: relative;
             z-index: 2;
+
+            &:first-child {
+
+                .event {
+                    margin-top: 0;
+                }
+            }
         }
     }
 
@@ -93,6 +100,7 @@
         background-color: $white;
         margin-bottom: 1rem;
         box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.5);
+        margin-top: -2rem;
 
         &:after {
             display: block;
@@ -127,6 +135,7 @@
         &.condensed {
             width: calc(30% - #{$eventToTimelineMargin});
             box-shadow: 0 3px 6px -6px rgba(0, 0, 0, 0.5);
+            margin-top: 0;
 
             &:after {
                 width: $condensedEventDotSize;
