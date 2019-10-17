@@ -176,4 +176,43 @@
             margin-bottom: 0.8rem;
         }
     }
+
+    @media screen and (max-width: $mediumScreen) {
+
+        .timeline {
+
+            &:after {
+                left: unset;
+                right: calc(#{$timelineWidth - ($eventDotSize / 2)} + #{$sectionPadding});
+            }
+        }
+
+        .event {
+            margin-top: 0;
+            width: calc(100% - #{$timelineWidth - ($eventDotSize / 2)} - #{$eventDotSize + ($timelineWidth / 2)} - #{$sectionPadding});
+
+            &.left, &.right {
+                float: left;
+                text-align: right;
+
+                &:after {
+                    left: unset;
+                    right: -($eventDotSize / 2) - $eventToTimelineMargin;
+                }
+            }
+
+            &.condensed {
+                width: calc(60% - #{$timelineWidth - ($eventDotSize / 2)} - #{$eventDotSize + ($timelineWidth / 2)} - #{$sectionPadding});
+
+                &.left, &.right {
+                    margin-left: 40%;
+
+                    &:after {
+                        left: unset;
+                        right: calc(-#{$eventToTimelineMargin} - (#{$condensedEventDotSize} / 2));
+                    }
+                }
+            }
+        }
+    }
 </style>

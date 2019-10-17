@@ -21,7 +21,7 @@
   }
 
   section {
-    padding: 2rem;
+    padding: $sectionPadding;
   }
 
   .row {
