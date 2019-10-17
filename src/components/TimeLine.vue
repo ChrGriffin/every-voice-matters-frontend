@@ -75,7 +75,7 @@
             bottom: 0;
             left: calc(50% - (#{$timelineWidth} / 2));
             width: $timelineWidth;
-            background-color: grey;
+            background: -webkit-linear-gradient(top, rgba(128, 128, 128 ,0) 1%, rgba(128, 128, 128, 1) 8%, rgba(128, 128, 128, 1) 92%, rgba(128, 128, 128,0) 99%);
             z-index: 1;
         }
 
@@ -86,7 +86,7 @@
             &:first-child {
 
                 .event {
-                    margin-top: 0;
+                    margin-top: 2rem;
                 }
             }
         }
@@ -98,7 +98,7 @@
         padding: 1rem;
         width: calc(50% - #{$eventToTimelineMargin});
         background-color: $white;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.5);
         margin-top: -2rem;
 
