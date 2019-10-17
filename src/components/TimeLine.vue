@@ -1,47 +1,34 @@
 <template>
     <div class="timeline">
-        <div class="row">
+        <div class="row" v-for="event in events">
             <div class="event left">
-                <h3>Event Title</h3>
-                <p>Some bad things happened. This is a description of those things. They were bad. Stupid things.</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="event condensed left">
-                <h3>Event Title</h3>
-                <p>Some bad things happened. This is a description of those things. They were bad. Stupid things.</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="event condensed left">
-                <h3>Event Title</h3>
-                <p>Some bad things happened. This is a description of those things. They were bad. Stupid things.</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="event right">
-                <h3>Event Title</h3>
-                <p>Some bad things happened. This is a description of those things. They were bad. Stupid things.</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="event condensed right">
-                <h3>Event Title</h3>
-                <p>Some bad things happened. This is a description of those things. They were bad. Stupid things.</p>
+                <h3>{{ event.name }}</h3>
+                <p>{{ event.text }}</p>
             </div>
         </div>
     </div>
 </template>
 
 <script lang="ts">
-    import {Component, Vue} from "vue-property-decorator";
+    import { Component, Prop, Vue } from "vue-property-decorator";
+    import TimelineApi from "@/services/api/TimelineApi";
+    import { Event } from '@/services/api/types';
 
     @Component
-    export default class TimeLine extends Vue {
+    export default class TimeLine extends Vue
+    {
+        @Prop({default: () => { return new TimelineApi; }}) timelineApi!: TimelineApi;
+
+        public events: Array<Event> = [];
+
+        private mounted(): void {
+            this.getEvents();
+        }
+
+        public getEvents(): void {
+            this.events = this.timelineApi
+                .getEvents();
+        }
     }
 </script>
 
