@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils';
 import TimeLine from '@/components/TimeLine.vue';
+import TimeLineEvent from '@/components/TimeLineEvent.vue';
 import * as TimelineApi from '@/services/api/TimelineApi';
 import { ImportMock } from 'ts-mock-imports';
 
@@ -54,7 +55,8 @@ describe('TimeLine.vue', () => {
         });
 
         wrapper.vm.$nextTick(() => {
-            const pageEvents = wrapper.findAll('div.event');
+
+            const pageEvents = wrapper.findAll(TimeLineEvent);
             expect(pageEvents).toHaveLength(5);
             events.forEach((event) => {
                 expect(wrapper.text()).toContain(event.name);
@@ -73,13 +75,16 @@ describe('TimeLine.vue', () => {
         });
 
         wrapper.vm.$nextTick(() => {
-            const condensedEvents = wrapper.findAll('div.event.condensed');
-            expect(condensedEvents).toHaveLength(3);
 
-            const nonCondensedEvents = wrapper.findAll('div.event')
-                .filter((event) => {
-                    return ! event.classes().includes('condensed');
-                });
+            const pageEvents = wrapper.findAll(TimeLineEvent);
+            const condensedEvents = pageEvents.filter((event) => {
+                return event.vm.$props.condensed === true;
+            });
+            const nonCondensedEvents = pageEvents.filter((event) => {
+                return event.vm.$props.condensed === false;
+            });
+
+            expect(condensedEvents).toHaveLength(3);
             expect(nonCondensedEvents).toHaveLength(2);
 
             done();
@@ -97,14 +102,14 @@ describe('TimeLine.vue', () => {
         wrapper.vm.$nextTick(() => {
 
             let expectation = 'right';
-            const pageEvents = wrapper.findAll('div.event');
+            const pageEvents = wrapper.findAll(TimeLineEvent);
 
             for (let i = 0; i < pageEvents.length; i++) {
-                if (! pageEvents.at(i).classes().includes('condensed')) {
+                if (! pageEvents.at(i).vm.$props.condensed) {
                     expectation = (expectation === 'right' ? 'left' : 'right');
                 }
 
-                expect(pageEvents.at(i).classes()).toContain(expectation);
+                expect(pageEvents.at(i).vm.$props.direction).toBe(expectation);
             }
 
             done();
