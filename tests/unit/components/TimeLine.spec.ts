@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils';
+import { mount } from '@vue/test-utils';
 import TimeLine from '@/components/TimeLine.vue';
 import * as TimelineApi from '@/services/api/TimelineApi';
 import { ImportMock } from 'ts-mock-imports';
@@ -47,7 +47,7 @@ describe('TimeLine.vue', () => {
 
     it('renders a timeline of events from the API', (done) => {
 
-        const wrapper = shallowMount(TimeLine, {
+        const wrapper = mount(TimeLine, {
             propsData: {
                 timelineApi: MockedTimelineApi.getMockInstance(),
             },
@@ -66,7 +66,7 @@ describe('TimeLine.vue', () => {
 
     it('displays events as condensed or not', (done) => {
 
-        const wrapper = shallowMount(TimeLine, {
+        const wrapper = mount(TimeLine, {
             propsData: {
                 timelineApi: MockedTimelineApi.getMockInstance(),
             },
@@ -88,7 +88,7 @@ describe('TimeLine.vue', () => {
 
     it('changes event direction after an uncondensed event', (done) => {
 
-        const wrapper = shallowMount(TimeLine, {
+        const wrapper = mount(TimeLine, {
             propsData: {
                 timelineApi: MockedTimelineApi.getMockInstance(),
             },
