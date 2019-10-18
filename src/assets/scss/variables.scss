@@ -1,9 +1,19 @@
+// Colours
 $offWhite: #eaeaea;
 $white: #f7f7f7;
 $red: #de2811;
 
 $backgroundColor: $offWhite;
 
+// Spacing
 $sectionPadding: 2rem;
 
+// Timeline
+$timelineWidth: 8px;
+$eventToTimelineMargin: 50px;
+
+$eventDotSize: 50px;
+$condensedEventDotSize: 25px;
+
+// Media Queries
 $mediumScreen: 62.9375rem;

@@ -10,28 +10,24 @@
 </template>
 
 <script lang="ts">
-    import {Component, Prop, Vue} from "vue-property-decorator";
-    import TimelineApi from "@/services/api/TimelineApi";
-    import {Event} from "@/services/api/types";
-    import TimeLineEvent from "@/components/TimeLineEvent.vue";
-    import {Direction} from "@/components/types";
+    import {Component, Prop, Vue} from 'vue-property-decorator';
+    import TimelineApi from '@/services/api/TimelineApi';
+    import {Event} from '@/services/api/types';
+    import TimeLineEvent from '@/components/TimeLineEvent.vue';
+    import {Direction} from '@/components/types';
 
     @Component({
-        components: {TimeLineEvent}
+        components: {TimeLineEvent},
     })
 
     export default class TimeLine extends Vue {
         @Prop({
             default: () => {
-                return new TimelineApi;
-            }
-        }) timelineApi!: TimelineApi;
+                return new TimelineApi();
+            },
+        }) public timelineApi!: TimelineApi;
 
-        public events: Array<Event> = [];
-
-        private mounted(): void {
-            this.getEvents();
-        }
+        public events: Event[] = [];
 
         public getEvents(): void {
             this.events = this.timelineApi
@@ -54,17 +50,15 @@
 
             return direction;
         }
+
+        private mounted(): void {
+            this.getEvents();
+        }
     }
 </script>
 
 <style scoped lang="scss">
     @import './../assets/scss/variables.scss';
-
-    $timelineWidth: 8px;
-    $eventToTimelineMargin: 50px;
-
-    $eventDotSize: 50px;
-    $condensedEventDotSize: 25px;
 
     .timeline {
         position: relative;

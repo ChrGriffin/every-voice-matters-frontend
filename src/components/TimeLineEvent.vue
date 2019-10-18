@@ -6,16 +6,15 @@
 </template>
 
 <script lang="ts">
-    import { Component, Prop, Vue } from "vue-property-decorator";
-    import {Direction} from "@/components/types";
+    import { Component, Prop, Vue } from 'vue-property-decorator';
+    import {Direction} from './types';
 
     @Component
-    export default class TimeLineEvent extends Vue
-    {
-        @Prop() name!: string;
-        @Prop() text!: string;
-        @Prop() condensed!: boolean;
-        @Prop() direction!: Direction;
+    export default class TimeLineEvent extends Vue {
+        @Prop() public name!: string;
+        @Prop() public text!: string;
+        @Prop() public condensed!: boolean;
+        @Prop() public direction!: Direction;
 
         get className(): string {
             let classname = 'event ';
@@ -31,12 +30,6 @@
 
 <style scoped lang="scss">
     @import './../assets/scss/variables.scss';
-
-    $timelineWidth: 8px;
-    $eventToTimelineMargin: 50px;
-
-    $eventDotSize: 50px;
-    $condensedEventDotSize: 25px;
 
     .timeline {
         position: relative;
