@@ -1,52 +1,30 @@
 <template>
-    <div class="timeline">
-        <div class="row" v-for="event in events">
-            <time-line-event :name="event.name" :text="event.text" :condensed="event.condensed" :direction="getDirection(event)"/>
-        </div>
+    <div :class="className">
+        <h3>{{ name }}</h3>
+        <p>{{ text }}</p>
     </div>
 </template>
 
 <script lang="ts">
     import { Component, Prop, Vue } from "vue-property-decorator";
-    import TimelineApi from "@/services/api/TimelineApi";
-    import { Event } from '@/services/api/types';
-    import TimeLineEvent from "@/components/TimeLineEvent.vue";
-    import { Direction } from "@/components/types";
+    import {Direction} from "@/components/types";
 
-    @Component({
-        components: { TimeLineEvent }
-    })
-
-    export default class TimeLine extends Vue
+    @Component
+    export default class TimeLineEvent extends Vue
     {
-        @Prop({default: () => { return new TimelineApi; }}) timelineApi!: TimelineApi;
+        @Prop() name!: string;
+        @Prop() text!: string;
+        @Prop() condensed!: boolean;
+        @Prop() direction!: Direction;
 
-        public events: Array<Event> = [];
-
-        private mounted(): void {
-            this.getEvents();
-        }
-
-        public getEvents(): void {
-            this.events = this.timelineApi
-                .getEvents();
-        }
-
-        public getDirection(event: Event): Direction {
-            const eventIndex = this.events.indexOf(event);
-            let direction = Direction.right;
-
-            let currentIndex = 0;
-            do {
-                if (! this.events[currentIndex].condensed) {
-                    direction = (direction === Direction.right ? Direction.left : Direction.right);
-                }
-
-                currentIndex++;
+        get className(): string {
+            let classname = 'event ';
+            if (this.condensed) {
+                classname += 'condensed ';
             }
-            while(eventIndex >= currentIndex);
 
-            return direction;
+            classname += this.direction;
+            return classname;
         }
     }
 </script>
