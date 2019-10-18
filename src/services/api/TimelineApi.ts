@@ -90,6 +90,19 @@ export default class TimelineApi {
                 ],
             },
             {
+                name: 'Mei Supports the Hong Kong Protest',
+                text: 'The Overwatch character Mei begins to emerge as a symbol of the Hong Kong protest amongst gamers, partially due to an effort by Western gamers to get Overwatch banned in China.',
+                condensed: false,
+                time: new Date('October 8, 2019 12:57:12 EDT'),
+                attachments: [
+                    {
+                        type: EventAttachmentType.url,
+                        value: 'https://www.reddit.com/r/HongKong/comments/df2rz7/it_would_be_such_a_shame_if_mei_from_overwatch/',
+                        label: 'Original Reddit Post',
+                    },
+                ],
+            },
+            {
                 name: 'Blizzard Employees Walk Out in Protest',
                 text: 'A small group of Blizzard employees stage a walkout to protest Blizzard\'s harsh punishment of Blitzchung.',
                 condensed: true,

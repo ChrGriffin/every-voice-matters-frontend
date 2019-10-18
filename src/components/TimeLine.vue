@@ -72,7 +72,7 @@
             bottom: 0;
             left: calc(50% - (#{$timelineWidth} / 2));
             width: $timelineWidth;
-            background: -webkit-linear-gradient(top, rgba($red, 0) 1%, rgba($red, 1) 8%, rgba($red, 1) 92%, rgba($red, 0) 99%);
+            background: -webkit-linear-gradient(top, rgba($red, 0) 0.5%, rgba($red, 1) 3%, rgba($red, 1) 97%, rgba($red, 0) 99.5%);
             z-index: 1;
         }
 
