@@ -1,25 +1,31 @@
 <template>
     <div class="timeline">
         <div class="row" v-for="event in events">
-            <time-line-event :name="event.name" :text="event.text" :condensed="event.condensed" :direction="getDirection(event)"/>
+            <time-line-event :name="event.name"
+                             :text="event.text"
+                             :condensed="event.condensed"
+                             :direction="getDirection(event)"/>
         </div>
     </div>
 </template>
 
 <script lang="ts">
-    import { Component, Prop, Vue } from "vue-property-decorator";
+    import {Component, Prop, Vue} from "vue-property-decorator";
     import TimelineApi from "@/services/api/TimelineApi";
-    import { Event } from '@/services/api/types';
+    import {Event} from "@/services/api/types";
     import TimeLineEvent from "@/components/TimeLineEvent.vue";
-    import { Direction } from "@/components/types";
+    import {Direction} from "@/components/types";
 
     @Component({
-        components: { TimeLineEvent }
+        components: {TimeLineEvent}
     })
 
-    export default class TimeLine extends Vue
-    {
-        @Prop({default: () => { return new TimelineApi; }}) timelineApi!: TimelineApi;
+    export default class TimeLine extends Vue {
+        @Prop({
+            default: () => {
+                return new TimelineApi;
+            }
+        }) timelineApi!: TimelineApi;
 
         public events: Array<Event> = [];
 
@@ -38,13 +44,13 @@
 
             let currentIndex = 0;
             do {
-                if (! this.events[currentIndex].condensed) {
+                if (!this.events[currentIndex].condensed) {
                     direction = (direction === Direction.right ? Direction.left : Direction.right);
                 }
 
                 currentIndex++;
             }
-            while(eventIndex >= currentIndex);
+            while (eventIndex >= currentIndex);
 
             return direction;
         }
