@@ -31,41 +31,6 @@
 <style scoped lang="scss">
     @import './../assets/scss/variables.scss';
 
-    .timeline {
-        position: relative;
-
-        &:after {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: calc(50% - (#{$timelineWidth} / 2));
-            width: $timelineWidth;
-            background: -webkit-linear-gradient(top, rgba($red, 0) 1%, rgba($red, 1) 8%, rgba($red, 1) 92%, rgba($red, 0) 99%);
-            z-index: 1;
-        }
-
-        .row {
-            position: relative;
-            z-index: 2;
-
-            &:first-child {
-
-                .event {
-                    margin-top: 2rem;
-                }
-            }
-
-            &:last-child {
-
-                .event {
-                    margin-bottom: 2rem;
-                }
-            }
-        }
-    }
-
     .event {
         position: relative;
         display: block;
@@ -152,14 +117,6 @@
     }
 
     @media screen and (max-width: $mediumScreen) {
-
-        .timeline {
-
-            &:after {
-                left: unset;
-                right: calc(#{$timelineWidth - ($eventDotSize / 2)} + #{$sectionPadding});
-            }
-        }
 
         .event {
             margin-top: 0;
