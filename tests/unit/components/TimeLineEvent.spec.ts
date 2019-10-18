@@ -8,7 +8,8 @@ const props = {
     condensed: false,
     direction: Direction.left,
     date: new Date('October 8, 2019 00:00:00 EST'),
-    attachments: [],
+    urls: [],
+    images: []
 };
 
 describe('TimeLineEvent.vue', () => {
@@ -22,7 +23,8 @@ describe('TimeLineEvent.vue', () => {
                 condensed: true,
                 direction: props.direction,
                 date: props.date,
-                attachments: props.attachments,
+                urls: props.urls,
+                images: props.images,
             },
         });
 
@@ -33,7 +35,8 @@ describe('TimeLineEvent.vue', () => {
                 condensed: false,
                 direction: props.direction,
                 date: props.date,
-                attachments: props.attachments,
+                urls: props.urls,
+                images: props.images,
             },
         });
 
@@ -50,7 +53,8 @@ describe('TimeLineEvent.vue', () => {
                 condensed: props.condensed,
                 direction: Direction.left,
                 date: props.date,
-                attachments: props.attachments,
+                urls: props.urls,
+                images: props.images,
             },
         });
 
@@ -61,7 +65,8 @@ describe('TimeLineEvent.vue', () => {
                 condensed: props.condensed,
                 direction: Direction.right,
                 date: props.date,
-                attachments: props.attachments,
+                urls: props.urls,
+                images: props.images,
             },
         });
 
@@ -78,7 +83,8 @@ describe('TimeLineEvent.vue', () => {
                 condensed: props.condensed,
                 direction: props.direction,
                 date: new Date('October 9, 2019 00:00:00 EST'),
-                attachments: props.attachments,
+                urls: props.urls,
+                images: props.images,
             },
         });
 

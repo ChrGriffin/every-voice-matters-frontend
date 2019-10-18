@@ -91,7 +91,7 @@ export default class TimelineApi {
             },
             {
                 name: 'Mei Supports the Hong Kong Protest',
-                text: 'The Overwatch character Mei begins to emerge as a symbol of the Hong Kong protest amongst gamers, partially due to an effort by Western gamers to get Overwatch banned in China.',
+                text: 'The Overwatch character Mei begins to emerge as a symbol of the Hong Kong protest amongst gamers, partially due to an effort by Western gamers to have Overwatch banned in China.',
                 condensed: false,
                 time: new Date('October 8, 2019 12:57:12 EDT'),
                 attachments: [

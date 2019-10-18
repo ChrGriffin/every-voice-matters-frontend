@@ -2,13 +2,17 @@
     <div :class="className">
         <span class="date">{{ humanReadableDate }}</span>
         <h3>{{ name }}</h3>
-        <p>{{ text }}</p>
+        <div class="content">
+            <p>{{ text }}</p>
+
+        </div>
     </div>
 </template>
 
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
     import { Direction } from './types';
+    import {EventAttachment} from '@/services/api/types';
 
     @Component
     export default class TimeLineEvent extends Vue {
@@ -17,6 +21,8 @@
         @Prop() public condensed!: boolean;
         @Prop() public date!: Date;
         @Prop() public direction!: Direction;
+        @Prop() public urls!: EventAttachment[];
+        @Prop() public images!: EventAttachment[];
 
         get className(): string {
             let classname = 'event ';
@@ -96,7 +102,7 @@
         }
 
         &.condensed {
-            width: calc(30% - #{$eventToTimelineMargin});
+            width: calc(40% - #{$eventToTimelineMargin});
             box-shadow: 0 3px 6px -6px rgba(0, 0, 0, 0.5);
             margin-top: 0;
 
@@ -108,7 +114,7 @@
             }
 
             &.left {
-                margin-left: calc(20% + 1px);
+                margin-left: calc(10% + 1px);
 
                 &:after {
                     right: calc(-#{$eventToTimelineMargin} - (#{$condensedEventDotSize} / 2));
@@ -116,7 +122,7 @@
             }
 
             &.right {
-                margin-right: 20%;
+                margin-right: 10%;
 
                 &:after {
                     left: calc(-#{$eventToTimelineMargin} - (#{$condensedEventDotSize} / 2));
@@ -129,7 +135,7 @@
                 margin-bottom: 0;
             }
 
-            p {
+            .content {
                 display: none;
             }
         }
@@ -167,16 +173,27 @@
             }
 
             &.condensed {
-                width: calc(60% - #{$timelineWidth - ($eventDotSize / 2)} - #{$eventDotSize + ($timelineWidth / 2)} - #{$sectionPadding});
+                width: calc(70% - #{$timelineWidth - ($eventDotSize / 2)} - #{$eventDotSize + ($timelineWidth / 2)} - #{$sectionPadding});
 
                 &.left, &.right {
-                    margin-left: 40%;
+                    margin-left: 30%;
 
                     &:after {
                         left: unset;
                         right: calc(-#{$eventToTimelineMargin} - (#{$condensedEventDotSize} / 2));
                     }
                 }
+            }
+        }
+    }
+
+    @media screen and (max-width: $smallScreen) {
+        .event.condensed {
+
+            width: calc(100% - #{$timelineWidth - ($eventDotSize / 2)} - #{$eventDotSize + ($timelineWidth / 2)} - #{$sectionPadding});
+
+            &.left, &.right {
+                margin-left: 0;
             }
         }
     }

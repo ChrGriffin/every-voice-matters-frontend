@@ -5,7 +5,9 @@
                              :text="event.text"
                              :condensed="event.condensed"
                              :direction="getDirection(event)"
-                             :date="event.time"/>
+                             :date="event.time"
+                             :urls="event.attachments.filter(filterUrls)"
+                             :images="event.attachments.filter(filterImages)"/>
         </div>
     </div>
 </template>
@@ -13,7 +15,7 @@
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
     import TimelineApi from '@/services/api/TimelineApi';
-    import { Event } from '@/services/api/types';
+    import { Event, EventAttachment, EventAttachmentType } from '@/services/api/types';
     import TimeLineEvent from '@/components/TimeLineEvent.vue';
     import { Direction } from '@/components/types';
 
@@ -50,6 +52,14 @@
             while (eventIndex >= currentIndex);
 
             return direction;
+        }
+
+        public filterUrls(attachment: EventAttachment): boolean {
+            return attachment.type === EventAttachmentType.url;
+        }
+
+        public filterImages(attachment: EventAttachment): boolean {
+            return attachment.type === EventAttachmentType.image;
         }
 
         private mounted(): void {
