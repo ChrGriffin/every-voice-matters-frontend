@@ -7,7 +7,7 @@
 
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
-    import {Direction} from './types';
+    import { Direction } from './types';
 
     @Component
     export default class TimeLineEvent extends Vue {

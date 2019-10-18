@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import TimeLineEvent from '@/components/TimeLineEvent.vue';
-import {Direction} from '@/components/types';
+import { Direction } from '@/components/types';
 
 const props = {
     name: 'Geralt of Rivia',
