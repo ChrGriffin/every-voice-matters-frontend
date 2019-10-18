@@ -4,7 +4,8 @@
             <time-line-event :name="event.name"
                              :text="event.text"
                              :condensed="event.condensed"
-                             :direction="getDirection(event)"/>
+                             :direction="getDirection(event)"
+                             :date="event.time"/>
         </div>
     </div>
 </template>

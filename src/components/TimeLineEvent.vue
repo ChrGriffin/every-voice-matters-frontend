@@ -1,5 +1,6 @@
 <template>
     <div :class="className">
+        <span class="date">{{ humanReadableDate }}</span>
         <h3>{{ name }}</h3>
         <p>{{ text }}</p>
     </div>
@@ -14,6 +15,7 @@
         @Prop() public name!: string;
         @Prop() public text!: string;
         @Prop() public condensed!: boolean;
+        @Prop() public date!: Date;
         @Prop() public direction!: Direction;
 
         get className(): string {
@@ -24,6 +26,24 @@
 
             classname += this.direction;
             return classname;
+        }
+
+        get humanReadableDate(): string {
+            const months = [
+                'January',
+                'February',
+                'March',
+                'April',
+                'May',
+                'June',
+                'July',
+                'August',
+                'September',
+                'October',
+                'November',
+                'December',
+            ];
+            return `${months[this.date.getMonth()]} ${this.date.getDate()}, ${this.date.getUTCFullYear()}`;
         }
     }
 </script>
@@ -40,6 +60,7 @@
         margin-bottom: 1rem;
         box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.5);
         margin-top: -2rem;
+        text-align: justify;
 
         &:after {
             display: block;
@@ -60,11 +81,14 @@
             &:after {
                 right: calc(-#{$eventToTimelineMargin} - (#{$eventDotSize} / 2));
             }
+
+            p {
+                text-align: justify;
+            }
         }
 
         &.right {
             float: right;
-            text-align: left;
 
             &:after {
                 left: calc(-#{$eventToTimelineMargin} - (#{$eventDotSize} / 2));
@@ -112,7 +136,17 @@
 
         h3 {
             font-size: 1.4rem;
+            margin-top: 0.5rem;
             margin-bottom: 0.8rem;
+        }
+
+        p {
+            line-height: 1.2;
+        }
+
+        .date {
+            font-style: italic;
+            font-size: 0.8rem;
         }
     }
 

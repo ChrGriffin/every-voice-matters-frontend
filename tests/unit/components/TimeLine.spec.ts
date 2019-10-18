@@ -3,39 +3,45 @@ import TimeLine from '@/components/TimeLine.vue';
 import TimeLineEvent from '@/components/TimeLineEvent.vue';
 import * as TimelineApi from '@/services/api/TimelineApi';
 import { ImportMock } from 'ts-mock-imports';
+import {Event} from '@/services/api/types';
 
 const MockedTimelineApi = ImportMock.mockClass(TimelineApi);
 
-const events = [
+const events: Event[] = [
     {
         name: 'Geralt of Rivia',
         text: '',
         condensed: false,
         time: new Date('October 8, 2019 11:13:00'),
+        attachments: [],
     },
     {
         name: 'Yennefer of Vengerberg',
         text: '',
         condensed: true,
         time: new Date('October 8, 2019 16:42:00'),
+        attachments: [],
     },
     {
         name: 'Triss Merigold',
         text: '',
         condensed: true,
         time: new Date('October 9, 2019 11:13:00'),
+        attachments: [],
     },
     {
         name: 'Cirilla',
         text: '',
         condensed: false,
         time: new Date('October 9, 2019 11:47:00'),
+        attachments: [],
     },
     {
         name: 'Emhyr var Emris',
         text: '',
         condensed: true,
         time: new Date('October 10, 2019 11:13:00'),
+        attachments: [],
     },
 ];
 

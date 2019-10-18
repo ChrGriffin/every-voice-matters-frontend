@@ -7,6 +7,8 @@ const props = {
     text: '',
     condensed: false,
     direction: Direction.left,
+    date: new Date('October 8, 2019 00:00:00 EST'),
+    attachments: [],
 };
 
 describe('TimeLineEvent.vue', () => {
@@ -19,6 +21,8 @@ describe('TimeLineEvent.vue', () => {
                 text: props.text,
                 condensed: true,
                 direction: props.direction,
+                date: props.date,
+                attachments: props.attachments,
             },
         });
 
@@ -28,6 +32,8 @@ describe('TimeLineEvent.vue', () => {
                 text: props.text,
                 condensed: false,
                 direction: props.direction,
+                date: props.date,
+                attachments: props.attachments,
             },
         });
 
@@ -43,6 +49,8 @@ describe('TimeLineEvent.vue', () => {
                 text: props.text,
                 condensed: props.condensed,
                 direction: Direction.left,
+                date: props.date,
+                attachments: props.attachments,
             },
         });
 
@@ -52,6 +60,8 @@ describe('TimeLineEvent.vue', () => {
                 text: props.text,
                 condensed: props.condensed,
                 direction: Direction.right,
+                date: props.date,
+                attachments: props.attachments,
             },
         });
 
@@ -67,10 +77,13 @@ describe('TimeLineEvent.vue', () => {
                 text: 'of Rivia',
                 condensed: props.condensed,
                 direction: props.direction,
+                date: new Date('October 9, 2019 00:00:00 EST'),
+                attachments: props.attachments,
             },
         });
 
         expect(wrapper.text()).toContain('Geralt');
         expect(wrapper.text()).toContain('of Rivia');
+        expect(wrapper.text()).toContain('October 9, 2019');
     })
 });
