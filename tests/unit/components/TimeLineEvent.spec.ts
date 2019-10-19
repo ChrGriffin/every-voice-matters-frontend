@@ -114,8 +114,8 @@ describe('TimeLineEvent.vue', () => {
                     {
                         type: EventAttachmentType.image,
                         value: 'https://www.geralt-rivia.of/yennefer.jpg',
-                        label: 'A descriptive alt tag.'
-                    }
+                        label: 'A descriptive alt tag.',
+                    },
                 ],
             },
         });
