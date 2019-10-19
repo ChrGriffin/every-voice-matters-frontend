@@ -115,7 +115,7 @@ describe('TimeLineEvent.vue', () => {
                         type: EventAttachmentType.url,
                         value: 'https://www.geralt-rivia.of',
                         label: 'Original Link'
-                    }
+                    },
                 ],
                 images: [
                     {
