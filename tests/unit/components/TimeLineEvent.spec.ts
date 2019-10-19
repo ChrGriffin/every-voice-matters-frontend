@@ -9,6 +9,7 @@ const props = {
     condensed: false,
     direction: Direction.left,
     date: new Date('October 8, 2019 00:00:00 EST'),
+    icon: '',
     urls: [],
     images: [],
 };
@@ -24,6 +25,7 @@ describe('TimeLineEvent.vue', () => {
                 condensed: true,
                 direction: props.direction,
                 date: props.date,
+                icon: props.icon,
                 urls: props.urls,
                 images: props.images,
             },
@@ -36,6 +38,7 @@ describe('TimeLineEvent.vue', () => {
                 condensed: false,
                 direction: props.direction,
                 date: props.date,
+                icon: props.icon,
                 urls: props.urls,
                 images: props.images,
             },
@@ -54,6 +57,7 @@ describe('TimeLineEvent.vue', () => {
                 condensed: props.condensed,
                 direction: Direction.left,
                 date: props.date,
+                icon: props.icon,
                 urls: props.urls,
                 images: props.images,
             },
@@ -66,6 +70,7 @@ describe('TimeLineEvent.vue', () => {
                 condensed: props.condensed,
                 direction: Direction.right,
                 date: props.date,
+                icon: props.icon,
                 urls: props.urls,
                 images: props.images,
             },
@@ -84,6 +89,7 @@ describe('TimeLineEvent.vue', () => {
                 condensed: props.condensed,
                 direction: props.direction,
                 date: new Date('October 9, 2019 00:00:00 EST'),
+                icon: props.icon,
                 urls: props.urls,
                 images: props.images,
             },
@@ -103,6 +109,7 @@ describe('TimeLineEvent.vue', () => {
                 condensed: props.condensed,
                 direction: props.direction,
                 date: props.date,
+                icon: props.icon,
                 urls: [
                     {
                         type: EventAttachmentType.url,
@@ -130,5 +137,39 @@ describe('TimeLineEvent.vue', () => {
         expect(image).toBeTruthy();
         expect(image.getAttribute('src')).toBe('https://www.geralt-rivia.of/yennefer.jpg');
         expect(image.getAttribute('alt')).toBe('A descriptive alt tag.');
+    });
+
+    it('displays the event icon if the event is uncondensed', () => {
+
+        const uncondensedWrapper = shallowMount(TimeLineEvent, {
+            propsData: {
+                name: props.name,
+                text: props.text,
+                condensed: false,
+                direction: props.direction,
+                date: props.date,
+                icon: '/images/icon.svg',
+                urls: props.urls,
+                images: props.images,
+            },
+        });
+
+        const condensedWrapper = shallowMount(TimeLineEvent, {
+            propsData: {
+                name: props.name,
+                text: props.text,
+                condensed: true,
+                direction: props.direction,
+                date: props.date,
+                icon: '/images/icon.svg',
+                urls: props.urls,
+                images: props.images,
+            },
+        });
+
+        expect(condensedWrapper.find('.icon').element).toBeUndefined();
+        expect(uncondensedWrapper.find('.icon').element).toBeTruthy();
+        expect(uncondensedWrapper.find('.icon').element.getAttribute('src'))
+            .toBe('/images/icon.svg');
     });
 });

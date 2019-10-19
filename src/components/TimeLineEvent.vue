@@ -7,7 +7,7 @@
             <a v-for="url in urls" :href="url.value" target="_blank">{{ url.label }}</a>
             <img v-for="image in images" :src="image.value" :alt="image.label" />
         </div>
-        <img v-if="icon !== null" class="icon" :src="icon" />
+        <img v-if="condensed === false && icon !== null" class="icon" :src="icon" />
     </div>
 </template>
 
