@@ -4,7 +4,7 @@
         <h3>{{ name }}</h3>
         <div class="content">
             <p>{{ text }}</p>
-            <a v-for="url in urls" :href="url.value">{{ url.label }}</a>
+            <a v-for="url in urls" :href="url.value" target="_blank">{{ url.label }}</a>
             <img v-for="image in images" :src="image.value" :alt="image.label" />
         </div>
     </div>
@@ -141,19 +141,47 @@
             }
         }
 
+        .date {
+            font-style: italic;
+            font-size: 0.8rem;
+        }
+
         h3 {
             font-size: 1.4rem;
             margin-top: 0.5rem;
             margin-bottom: 0.8rem;
         }
 
-        p {
-            line-height: 1.2;
-        }
+        .content {
 
-        .date {
-            font-style: italic;
-            font-size: 0.8rem;
+            p {
+                line-height: 1.2;
+            }
+
+            a {
+                display: inline-block;
+                margin-top: 1rem;
+                font-size: 0.9rem;
+                font-style: italic;
+                color: black;
+
+                &:hover, &:active {
+                    color: black;
+                }
+
+                &:not(:last-of-type) {
+
+                    &:after {
+                        display: inline-block;
+                        content: '|';
+                        padding: 0 0.5rem;
+                    }
+                }
+            }
+
+            img {
+                display: none;
+            }
         }
     }
 
