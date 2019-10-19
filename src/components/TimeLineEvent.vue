@@ -4,7 +4,8 @@
         <h3>{{ name }}</h3>
         <div class="content">
             <p>{{ text }}</p>
-
+            <a v-for="url in urls" :href="url.value">{{ url.label }}</a>
+            <img v-for="image in images" :src="image.value" :alt="image.label" />
         </div>
     </div>
 </template>

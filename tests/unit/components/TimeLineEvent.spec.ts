@@ -1,6 +1,7 @@
 import { shallowMount } from '@vue/test-utils';
 import TimeLineEvent from '@/components/TimeLineEvent.vue';
 import { Direction } from '@/components/types';
+import {EventAttachmentType} from "@/services/api/types";
 
 const props = {
     name: 'Geralt of Rivia',
@@ -91,5 +92,43 @@ describe('TimeLineEvent.vue', () => {
         expect(wrapper.text()).toContain('Geralt');
         expect(wrapper.text()).toContain('of Rivia');
         expect(wrapper.text()).toContain('October 9, 2019');
-    })
+    });
+
+    it('displays the event attachments', () => {
+
+        const wrapper = shallowMount(TimeLineEvent, {
+            propsData: {
+                name: props.name,
+                text: props.text,
+                condensed: props.condensed,
+                direction: props.direction,
+                date: props.date,
+                urls: [
+                    {
+                        type: EventAttachmentType.url,
+                        value: 'https://www.geralt-rivia.of',
+                        label: 'Original Link'
+                    }
+                ],
+                images: [
+                    {
+                        type: EventAttachmentType.image,
+                        value: 'https://www.geralt-rivia.of/yennefer.jpg',
+                        label: 'A descriptive alt tag.'
+                    }
+                ],
+            },
+        });
+
+        const url = wrapper.find('a').element;
+        const image = wrapper.find('img').element;
+
+        expect(url).toBeTruthy();
+        expect(url.getAttribute('href')).toBe('https://www.geralt-rivia.of');
+        expect(url.innerHTML).toBe('Original Link');
+
+        expect(image).toBeTruthy();
+        expect(image.getAttribute('src')).toBe('https://www.geralt-rivia.of/yennefer.jpg');
+        expect(image.getAttribute('alt')).toBe('A descriptive alt tag.');
+    });
 });
