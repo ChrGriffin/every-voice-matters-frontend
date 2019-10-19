@@ -220,6 +220,15 @@
                     left: unset;
                     right: -($eventDotSize / 2) - $eventToTimelineMargin;
                 }
+
+                p {
+                    text-align: justify;
+                }
+
+                .icon {
+                    left: unset;
+                    right: -$eventToTimelineMargin - ($eventDotSize / 2) + ($iconUnderflow / 2);
+                }
             }
 
             &.condensed {
@@ -238,12 +247,22 @@
     }
 
     @media screen and (max-width: $smallScreen) {
-        .event.condensed {
+        .event {
 
-            width: calc(100% - #{$timelineWidth - ($eventDotSize / 2)} - #{$eventDotSize + ($timelineWidth / 2)} - #{$sectionPadding});
+            &.condensed {
+                width: calc(100% - #{$timelineWidth - ($eventDotSize / 2)} - #{$eventDotSize + ($timelineWidth / 2)} - #{$sectionPadding});
+
+                &.left, &.right {
+                    margin-left: 0;
+                }
+            }
 
             &.left, &.right {
-                margin-left: 0;
+                text-align: left;
+
+                p {
+                    text-align: left;
+                }
             }
         }
     }
