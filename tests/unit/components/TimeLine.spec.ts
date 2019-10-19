@@ -13,6 +13,7 @@ const events: Event[] = [
         text: '',
         condensed: false,
         time: new Date('October 8, 2019 11:13:00'),
+        icon: null,
         attachments: [],
     },
     {
@@ -20,6 +21,7 @@ const events: Event[] = [
         text: '',
         condensed: true,
         time: new Date('October 8, 2019 16:42:00'),
+        icon: null,
         attachments: [],
     },
     {
@@ -27,6 +29,7 @@ const events: Event[] = [
         text: '',
         condensed: true,
         time: new Date('October 9, 2019 11:13:00'),
+        icon: null,
         attachments: [],
     },
     {
@@ -34,6 +37,7 @@ const events: Event[] = [
         text: '',
         condensed: false,
         time: new Date('October 9, 2019 11:47:00'),
+        icon: null,
         attachments: [],
     },
     {
@@ -41,6 +45,7 @@ const events: Event[] = [
         text: '',
         condensed: true,
         time: new Date('October 10, 2019 11:13:00'),
+        icon: null,
         attachments: [],
     },
 ];
@@ -67,31 +72,6 @@ describe('TimeLine.vue', () => {
             events.forEach((event) => {
                 expect(wrapper.text()).toContain(event.name);
             });
-
-            done();
-        });
-    });
-
-    it('displays events as condensed or not', (done) => {
-
-        const wrapper = mount(TimeLine, {
-            propsData: {
-                timelineApi: MockedTimelineApi.getMockInstance(),
-            },
-        });
-
-        wrapper.vm.$nextTick(() => {
-
-            const pageEvents = wrapper.findAll(TimeLineEvent);
-            const condensedEvents = pageEvents.filter((event) => {
-                return event.vm.$props.condensed === true;
-            });
-            const nonCondensedEvents = pageEvents.filter((event) => {
-                return event.vm.$props.condensed === false;
-            });
-
-            expect(condensedEvents).toHaveLength(3);
-            expect(nonCondensedEvents).toHaveLength(2);
 
             done();
         });

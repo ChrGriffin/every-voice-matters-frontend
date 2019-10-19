@@ -3,6 +3,7 @@ export interface Event {
     text: string;
     condensed: boolean;
     time: Date;
+    icon: null|string;
     attachments: EventAttachment[];
 }
 

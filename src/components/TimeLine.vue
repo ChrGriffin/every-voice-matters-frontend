@@ -6,6 +6,7 @@
                              :condensed="event.condensed"
                              :direction="getDirection(event)"
                              :date="event.time"
+                             :icon="event.icon"
                              :urls="event.attachments.filter(filterUrls)"
                              :images="event.attachments.filter(filterImages)"/>
         </div>

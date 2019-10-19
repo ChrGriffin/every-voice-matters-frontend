@@ -10,7 +10,7 @@ const props = {
     direction: Direction.left,
     date: new Date('October 8, 2019 00:00:00 EST'),
     urls: [],
-    images: []
+    images: [],
 };
 
 describe('TimeLineEvent.vue', () => {

@@ -7,6 +7,7 @@
             <a v-for="url in urls" :href="url.value" target="_blank">{{ url.label }}</a>
             <img v-for="image in images" :src="image.value" :alt="image.label" />
         </div>
+        <img v-if="icon !== null" class="icon" :src="icon" />
     </div>
 </template>
 
@@ -21,6 +22,7 @@
         @Prop() public text!: string;
         @Prop() public condensed!: boolean;
         @Prop() public date!: Date;
+        @Prop() public icon!: null|string;
         @Prop() public direction!: Direction;
         @Prop() public urls!: EventAttachment[];
         @Prop() public images!: EventAttachment[];
@@ -58,6 +60,8 @@
 <style scoped lang="scss">
     @import './../assets/scss/variables.scss';
 
+    $iconUnderflow: $eventDotSize * 0.15;
+
     .event {
         position: relative;
         display: block;
@@ -74,11 +78,19 @@
             content: '';
             width: $eventDotSize;
             height: $eventDotSize;
-            background-color: $backgroundColor;
+            background-color: $red;
             border-radius: $eventDotSize / 2;
             border: $timelineWidth solid $red;
             position: absolute;
             top: calc(50% - (#{$eventDotSize} / 2));
+        }
+
+        .icon {
+            position: absolute;
+            width: $eventDotSize - $iconUnderflow;
+            height: $eventDotSize - $iconUnderflow;
+            top: calc(50% - #{($eventDotSize - $iconUnderflow) / 2});
+            z-index: 3;
         }
 
         &.left {
@@ -86,7 +98,11 @@
             text-align: right;
 
             &:after {
-                right: calc(-#{$eventToTimelineMargin} - (#{$eventDotSize} / 2));
+                right: -$eventToTimelineMargin - ($eventDotSize / 2);
+            }
+
+            .icon {
+                right: -$eventToTimelineMargin - ($eventDotSize / 2) + ($iconUnderflow / 2);
             }
 
             p {
@@ -98,7 +114,11 @@
             float: right;
 
             &:after {
-                left: calc(-#{$eventToTimelineMargin} - (#{$eventDotSize} / 2));
+                left: -$eventToTimelineMargin - ($eventDotSize / 2);
+            }
+
+            .icon {
+                left: -$eventToTimelineMargin - ($eventDotSize / 2) + ($iconUnderflow / 2);
             }
         }
 
@@ -112,12 +132,13 @@
                 height: $condensedEventDotSize;
                 border-radius: $condensedEventDotSize / 2;
                 top: calc(50% - (#{$condensedEventDotSize} / 2));
+                background-color: $backgroundColor;
             }
 
             &.left {
                 margin-left: calc(10% + 1px);
 
-                &:after {
+                &:after, .icon {
                     right: calc(-#{$eventToTimelineMargin} - (#{$condensedEventDotSize} / 2));
                 }
             }
