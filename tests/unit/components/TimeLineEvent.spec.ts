@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils';
 import TimeLineEvent from '@/components/TimeLineEvent.vue';
 import { Direction } from '@/components/types';
-import {EventAttachmentType} from "@/services/api/types";
+import { EventAttachmentType } from '@/services/api/types';
 
 const props = {
     name: 'Geralt of Rivia',
@@ -114,7 +114,7 @@ describe('TimeLineEvent.vue', () => {
                     {
                         type: EventAttachmentType.url,
                         value: 'https://www.geralt-rivia.of',
-                        label: 'Original Link'
+                        label: 'Original Link',
                     },
                 ],
                 images: [

@@ -212,17 +212,17 @@ export default class TimelineApi {
                     {
                         type: EventAttachmentType.url,
                         value: 'https://www.washingtonpost.com/video-games/2019/10/18/activision-blizzard-under-fire-bipartisan-group-congress-members-over-china-relations/',
-                        label: 'Washington Post Report'
+                        label: 'Washington Post Report',
                     },
                     {
                         type: EventAttachmentType.url,
                         value: 'https://www.pcgamer.com/bipartisan-members-of-congress-call-on-blizzard-to-reverse-blitzchung-punishment/',
-                        label: 'PCGamer Report'
+                        label: 'PCGamer Report',
                     },
                     {
                         type: EventAttachmentType.image,
                         value: 'https://i.redd.it/k1yb5neuxct31.jpg',
-                        label: '',
+                        label: 'Scanned letter to Robert Kotick from US Congress',
                     },
                 ],
             },
