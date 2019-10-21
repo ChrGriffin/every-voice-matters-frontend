@@ -44,14 +44,8 @@
     margin-bottom: 1rem;
   }
 
-  .timeline-wrapper {
-
-    .ps__rail-x {
-      display: none !important;
-    }
-
-    .ps__rail-y {
-      z-index: 6;
-    }
+  section .timeline {
+    padding-left: $sectionPadding;
+    padding-right: $sectionPadding;
   }
 </style>
