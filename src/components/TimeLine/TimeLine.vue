@@ -94,14 +94,14 @@
             &:first-child {
 
                 .event {
-                    margin-top: 1rem;
+                    margin-top: 2rem;
                 }
             }
 
             &:last-child {
 
                 .event {
-                    margin-bottom: 1rem;
+                    margin-bottom: 2rem;
                 }
             }
         }
@@ -113,7 +113,7 @@
 
             &:after {
                 left: unset;
-                right: calc(#{$timelineWidth - (($eventDotSize - $timelineWidth) / 2)} + #{$sectionPadding} + #{$timelineSmallScreenRightOffset});
+                right: calc(#{$timelineWidth - (($eventDotSize - $timelineWidth) / 2)} + #{$sectionPadding * 2} + #{$timelineSmallScreenRightOffset});
             }
         }
     }
