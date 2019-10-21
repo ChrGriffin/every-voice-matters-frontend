@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="top-fade"></div>
-        <vue-custom-scrollbar class="timeline-wrapper" :settings="{tagname: 'div'}">
+        <vue-custom-scrollbar class="timeline-wrapper" tagname="div">
             <time-line/>
         </vue-custom-scrollbar>
         <div class="bottom-fade"></div>

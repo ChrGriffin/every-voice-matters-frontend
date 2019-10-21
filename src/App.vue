@@ -27,4 +27,9 @@
   .row {
     @include clearfix();
   }
+
+  h2 {
+    text-align: left;
+    font-size: 2.4rem;
+  }
 </style>
