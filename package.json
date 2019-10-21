@@ -15,6 +15,7 @@
     "blear.scss.clearfix": "^1.0.1",
     "core-js": "^2.6.5",
     "css-reset-and-normalize": "^2.1.0",
+    "jarallax": "^1.11.1",
     "sinon": "^7.5.0",
     "ts-mock-imports": "^1.2.6",
     "vue": "^2.6.10",
