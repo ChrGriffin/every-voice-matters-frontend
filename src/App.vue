@@ -32,4 +32,15 @@
     text-align: left;
     font-size: 2.4rem;
   }
+
+  .timeline-wrapper {
+
+    .ps__rail-x {
+      display: none !important;
+    }
+
+    .ps__rail-y {
+      z-index: 6;
+    }
+  }
 </style>

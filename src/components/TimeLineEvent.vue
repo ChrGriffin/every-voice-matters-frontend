@@ -218,7 +218,7 @@
 
                 &:after {
                     left: unset;
-                    right: -($eventDotSize / 2) - $eventToTimelineMargin;
+                    right: -(($eventDotSize - $timelineWidth) / 2) - $eventToTimelineMargin + $timelineSmallScreenRightOffset;
                 }
 
                 p {
@@ -227,7 +227,7 @@
 
                 .icon {
                     left: unset;
-                    right: -$eventToTimelineMargin - ($eventDotSize / 2) + ($iconUnderflow / 2);
+                    right: -$eventToTimelineMargin - (($eventDotSize - $timelineWidth) / 2) + ($iconUnderflow / 2) + $timelineSmallScreenRightOffset;
                 }
             }
 
@@ -239,7 +239,7 @@
 
                     &:after {
                         left: unset;
-                        right: calc(-#{$eventToTimelineMargin} - (#{$condensedEventDotSize} / 2));
+                        right: calc(-#{$eventToTimelineMargin} - #{($condensedEventDotSize - $timelineWidth) / 2} + #{$timelineSmallScreenRightOffset});
                     }
                 }
             }

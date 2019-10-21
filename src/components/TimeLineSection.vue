@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="top-fade"></div>
-        <vue-custom-scrollbar class="timeline-wrapper" tagname="div">
+        <vue-custom-scrollbar class="timeline-wrapper" tagname="div" :suppress-scroll-x="true">
             <time-line/>
         </vue-custom-scrollbar>
         <div class="bottom-fade"></div>
@@ -22,7 +22,7 @@
     }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
     @import './../assets/scss/variables';
 
     .timeline-wrapper {

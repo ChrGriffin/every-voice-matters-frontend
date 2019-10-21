@@ -113,7 +113,7 @@
 
             &:after {
                 left: unset;
-                right: calc(#{$timelineWidth - ($eventDotSize / 2)} + #{$sectionPadding});
+                right: calc(#{$timelineWidth - (($eventDotSize - $timelineWidth) / 2)} + #{$sectionPadding} + #{$timelineSmallScreenRightOffset});
             }
         }
     }
