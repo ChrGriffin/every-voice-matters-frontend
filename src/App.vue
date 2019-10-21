@@ -36,8 +36,11 @@
     @include clearfix();
   }
 
-  h2 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: 'big-noodle-titling-oblique', sans-serif;
+  }
+
+  h2 {
     text-align: left;
     font-size: 4rem;
     line-height: 0.8;
