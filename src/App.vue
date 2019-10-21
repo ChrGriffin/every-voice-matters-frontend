@@ -9,6 +9,14 @@
   @import './../node_modules/blear.scss.clearfix/src/index';
   @import './assets/scss/variables.scss';
 
+  @font-face {
+    font-family: 'big-noodle-titling-oblique';
+    src: url('./assets/fonts/big_noodle_titling_oblique.woff2') format('woff2'),
+    url('./assets/fonts/big_noodle_titling_oblique.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   body {
     background-color: $offWhite;
   }
@@ -21,7 +29,7 @@
   }
 
   section {
-    padding: 0 $sectionPadding;
+    padding: $sectionPadding;
   }
 
   .row {
@@ -29,8 +37,11 @@
   }
 
   h2 {
+    font-family: 'big-noodle-titling-oblique', sans-serif;
     text-align: left;
-    font-size: 2.4rem;
+    font-size: 4rem;
+    line-height: 0.8;
+    margin-bottom: 1rem;
   }
 
   .timeline-wrapper {
