@@ -94,14 +94,14 @@
             &:first-child {
 
                 .event {
-                    margin-top: 2rem;
+                    margin-top: 1rem;
                 }
             }
 
             &:last-child {
 
                 .event {
-                    margin-bottom: 2rem;
+                    margin-bottom: 1rem;
                 }
             }
         }
