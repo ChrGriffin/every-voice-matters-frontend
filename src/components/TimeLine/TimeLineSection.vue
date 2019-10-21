@@ -50,5 +50,16 @@
             height: 20px;
             box-shadow: 0 10px 10px -8px rgba(0, 0, 0, 0.5);
         }
+
+        &:after {
+            display: block;
+            content: '';
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            box-shadow: 0 -10px 10px -8px rgba(0, 0, 0, 0.5);
+        }
     }
 </style>
