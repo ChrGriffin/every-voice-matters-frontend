@@ -17,7 +17,7 @@
     export default class TimeLineSection extends Vue {
         private mounted() {
             jarallax(document.querySelector('section.timeline'), {
-                speed: 0.6
+                speed: 0.6,
             });
         }
     }

@@ -10,7 +10,7 @@
     import CommunityArtGrid from '@/components/CommunityArt/CommunityArtGrid.vue';
 
     @Component({
-        components: { CommunityArtGrid }
+        components: { CommunityArtGrid },
     })
     export default class CommunityArtSection extends Vue {
 

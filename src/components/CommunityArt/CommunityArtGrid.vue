@@ -1,17 +1,17 @@
 <template>
     <div v-masonry transition-duration="0s" item-selector="section.fan-art .item" column-width="section.fan-art .item" :gutter="20">
-        <community-art-item v-for="art in communityArt" v-masonry-tile :image="art.image" :label="art.description" :author="art.author" />
+        <community-art-item v-for="art in communityArt" v-masonry-tile :key="art.image" :image="art.image" :label="art.description" :author="art.author" />
     </div>
 </template>
 
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
     import CommunityArtApi from '@/services/api/CommunityArtApi';
-    import { CommunityArt } from "@/services/api/types";
+    import { CommunityArt } from '@/services/api/types';
     import CommunityArtItem from '@/components/CommunityArt/CommunityArtItem.vue';
 
     @Component({
-        components: { CommunityArtItem }
+        components: { CommunityArtItem },
     })
     export default class CommunityArtGrid extends Vue {
         @Prop({

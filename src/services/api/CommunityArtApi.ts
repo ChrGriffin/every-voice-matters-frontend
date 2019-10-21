@@ -100,6 +100,38 @@ export default class CommunityArtApi {
                     url: 'https://www.teepublic.com/t-shirt/6271015-mei-supports-hong-kong?store_id=91685',
                 },
             },
+            {
+                image: 'https://images.ctfassets.net/hdj76fsccgd5/1RoJ6JuXSSQLOXIt4dIfsF/fdeac3dbda5d42502620455dd0ae7861/7.png',
+                description: 'Mei covering her eye with her fist in the air',
+                author: {
+                    name: 'Unknown',
+                    url: null,
+                },
+            },
+            {
+                image: 'https://66.media.tumblr.com/d0e1d34fc79f7189d9b51fee2545328f/71f853f24a1a7a5f-6b/s500x750/a8c4c47cc871de351bca6066c4dbdf9edc610077.jpg',
+                description: 'Mei in a gask mask spraypainting the words "No corporation is your friend"',
+                author: {
+                    name: 'Silvandar',
+                    url: 'https://silvandar.tumblr.com/',
+                },
+            },
+            {
+                image: 'https://res.cloudinary.com/teepublic/image/private/s--KBab063r--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1570799165/production/designs/6288675_0.jpg',
+                description: 'Mei with two Hong Kong flags',
+                author: {
+                    name: 'Aleks Kamerad',
+                    url: 'https://www.teepublic.com/pl/koszulka/6288675-mei-free-hong-kong?store_id=166664',
+                },
+            },
+            {
+                image: 'https://i.kym-cdn.com/photos/images/newsfeed/001/600/685/627.jpg',
+                description: 'Mei glaring at Chinese dictator holding "HK rights"',
+                author: {
+                    name: 'Unknown',
+                    url: null,
+                },
+            },
         ];
     }
 }
