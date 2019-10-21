@@ -1,8 +1,8 @@
-import { FanArt } from './types';
+import { CommunityArt } from './types';
 
-export default class FanArtApi {
+export default class CommunityArtApi {
 
-    public getFanArt(): FanArt[] {
+    public getArt(): CommunityArt[] {
         return [
             {
                 image: 'https://i.imgur.com/1N8Vvnv.png',

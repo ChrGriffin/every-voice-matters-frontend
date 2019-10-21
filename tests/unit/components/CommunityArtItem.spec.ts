@@ -1,16 +1,16 @@
 import { shallowMount } from '@vue/test-utils';
-import FanArtItem from '@/components/FanArt/FanArtItem.vue';
+import CommunityArtItem from '@/components/CommunityArt/CommunityArtItem.vue';
 
 const props = {
     image: '/path/to/geralt/of/rivia.jpg',
     label: 'Geralt of Rivia',
 };
 
-describe('FanArtItem.vue', () => {
+describe('CommunityArtItem.vue', () => {
 
     it('displays the image', () => {
 
-        const wrapper = shallowMount(FanArtItem, {
+        const wrapper = shallowMount(CommunityArtItem, {
             propsData: props,
         });
 
@@ -21,7 +21,7 @@ describe('FanArtItem.vue', () => {
 
     it('applies the image alt tag', () => {
 
-        const wrapper = shallowMount(FanArtItem, {
+        const wrapper = shallowMount(CommunityArtItem, {
             propsData: props,
         });
 

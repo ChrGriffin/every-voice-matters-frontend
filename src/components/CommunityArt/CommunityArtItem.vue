@@ -8,7 +8,7 @@
     import { Component, Prop, Vue } from 'vue-property-decorator';
 
     @Component({})
-    export default class FanArtItem extends Vue {
+    export default class CommunityArtItem extends Vue {
         @Prop() public image!: string;
         @Prop() public label!: string;
     }

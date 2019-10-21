@@ -18,13 +18,13 @@ export enum EventAttachmentType {
     image = 'image',
 }
 
-export interface FanArt {
+export interface CommunityArt {
     image: string;
     description: string;
-    author: FanArtAuthor;
+    author: CommunityArtAuthor;
 }
 
-export interface FanArtAuthor {
+export interface CommunityArtAuthor {
     name: string;
     url: null|string;
 }
