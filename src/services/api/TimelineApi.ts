@@ -1,4 +1,4 @@
-import {Event, EventAttachmentType} from './types';
+import { Event, EventAttachmentType } from './types';
 
 export default class TimelineApi {
 

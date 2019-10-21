@@ -34,8 +34,7 @@
         public events: Event[] = [];
 
         public getEvents(): void {
-            this.events = this.timelineApi
-                .getEvents();
+            this.events = this.timelineApi.getEvents();
         }
 
         public getDirection(event: Event): Direction {

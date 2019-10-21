@@ -17,3 +17,14 @@ export enum EventAttachmentType {
     url = 'url',
     image = 'image',
 }
+
+export interface FanArt {
+    image: string;
+    description: string;
+    author: FanArtAuthor;
+}
+
+export interface FanArtAuthor {
+    name: string;
+    url: null|string;
+}
