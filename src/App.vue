@@ -36,15 +36,14 @@
     @include clearfix();
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2 {
     font-family: 'big-noodle-titling-oblique', sans-serif;
   }
 
   h2 {
-    text-align: left;
     font-size: 4rem;
     line-height: 0.8;
-    margin-bottom: 1rem;
+    margin: 1rem 0 3rem;
   }
 
   section .timeline {

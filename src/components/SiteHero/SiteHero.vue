@@ -39,7 +39,7 @@
     @import '../../assets/scss/variables';
 
     header {
-        padding: 8rem 0;
+        padding: 8rem 0 9rem;
         background: black;
     }
 
