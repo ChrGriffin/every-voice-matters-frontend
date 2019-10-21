@@ -4,6 +4,9 @@ import router from './router';
 
 Vue.config.productionTip = false;
 
+import {VueMasonryPlugin} from 'vue-masonry';
+Vue.use(VueMasonryPlugin);
+
 new Vue({
   router,
   render: (h) => h(App),
