@@ -92,6 +92,14 @@ export default class CommunityArtApi {
                     url: 'https://yuumei-art.tumblr.com',
                 },
             },
+            {
+                image: 'https://res.cloudinary.com/teepublic/image/private/s--nMu3jfOO--/t_Preview/b_rgb:6e2229,c_limit,f_jpg,h_630,q_90,w_630/v1570678903/production/designs/6271015_1.jpg',
+                description: 'Mei\'s Overwatch icon with a covered eye and a facemask',
+                author: {
+                    name: 'PeregrineStudios',
+                    url: 'https://www.teepublic.com/t-shirt/6271015-mei-supports-hong-kong?store_id=91685',
+                },
+            },
         ];
     }
 }

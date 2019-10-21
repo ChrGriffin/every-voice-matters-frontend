@@ -1,13 +1,13 @@
 <template>
     <div v-masonry transition-duration="0s" item-selector="section.fan-art .item" column-width="section.fan-art .item" :gutter="20">
-        <community-art-item v-for="art in fanArt" v-masonry-tile :image="art.image" :label="art.description" />
+        <community-art-item v-for="art in communityArt" v-masonry-tile :image="art.image" :label="art.description" :author="art.author" />
     </div>
 </template>
 
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
     import CommunityArtApi from '@/services/api/CommunityArtApi';
-    import { FanArt } from "@/services/api/types";
+    import { CommunityArt } from "@/services/api/types";
     import CommunityArtItem from '@/components/CommunityArt/CommunityArtItem.vue';
 
     @Component({
@@ -20,10 +20,10 @@
             },
         }) public communityArtApi!: CommunityArtApi;
 
-        public fanArt: FanArt[] = [];
+        public communityArt: CommunityArt[] = [];
 
         public getFanArt(): void {
-            this.fanArt = this.communityArtApi.getArt();
+            this.communityArt = this.communityArtApi.getArt();
         }
 
         private mounted() {
