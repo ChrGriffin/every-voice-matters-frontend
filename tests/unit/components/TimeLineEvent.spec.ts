@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import TimeLineEvent from '@/components/TimeLineEvent.vue';
+import TimeLineEvent from '@/components/TimeLine/TimeLineEvent.vue';
 import { Direction } from '@/components/types';
 import { EventAttachmentType } from '@/services/api/types';
 

@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import TimeLineSection from '@/components/TimeLineSection.vue';
+import TimeLineSection from '@/components/TimeLine/TimeLineSection.vue';
 
 @Component({
   components: {

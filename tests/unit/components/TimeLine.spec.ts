@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
-import TimeLine from '@/components/TimeLine.vue';
-import TimeLineEvent from '@/components/TimeLineEvent.vue';
+import TimeLine from '@/components/TimeLine/TimeLine.vue';
+import TimeLineEvent from '@/components/TimeLine/TimeLineEvent.vue';
 import * as TimelineApi from '@/services/api/TimelineApi';
 import { ImportMock } from 'ts-mock-imports';
 import {Event} from '@/services/api/types';

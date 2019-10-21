@@ -10,7 +10,7 @@
 
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
-    import TimeLine from '@/components/TimeLine.vue';
+    import TimeLine from '@/components/TimeLine/TimeLine.vue';
     import VueCustomScrollbar from 'vue-custom-scrollbar';
 
     @Component({
@@ -23,7 +23,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import './../assets/scss/variables';
+    @import '../../assets/scss/variables';
 
     .timeline-wrapper {
         z-index: 4;

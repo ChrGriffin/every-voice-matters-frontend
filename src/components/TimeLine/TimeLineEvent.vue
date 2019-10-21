@@ -13,7 +13,7 @@
 
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
-    import { Direction } from './types';
+    import { Direction } from '../types';
     import {EventAttachment} from '@/services/api/types';
 
     @Component
@@ -58,7 +58,7 @@
 </script>
 
 <style scoped lang="scss">
-    @import './../assets/scss/variables.scss';
+    @import '../../assets/scss/variables';
 
     $iconUnderflow: $eventDotSize * 0.15;
 

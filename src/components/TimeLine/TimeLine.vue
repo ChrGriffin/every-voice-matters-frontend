@@ -17,7 +17,7 @@
     import { Component, Prop, Vue } from 'vue-property-decorator';
     import TimelineApi from '@/services/api/TimelineApi';
     import { Event, EventAttachment, EventAttachmentType } from '@/services/api/types';
-    import TimeLineEvent from '@/components/TimeLineEvent.vue';
+    import TimeLineEvent from '@/components/TimeLine/TimeLineEvent.vue';
     import { Direction } from '@/components/types';
 
     @Component({
@@ -70,7 +70,7 @@
 </script>
 
 <style scoped lang="scss">
-    @import './../assets/scss/variables.scss';
+    @import '../../assets/scss/variables';
 
     .timeline {
         position: relative;
