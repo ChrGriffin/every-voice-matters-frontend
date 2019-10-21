@@ -32,10 +32,23 @@
     }
 
     section {
+        position: relative;
         padding-left: 0;
         padding-right: 0;
         background-image: url('./../../assets/images/triangles.jpg');
         background-repeat: repeat;
         background-size: 60%;
+        overflow: hidden;
+
+        &:before {
+            display: block;
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            box-shadow: 0 10px 10px -8px rgba(0, 0, 0, 0.5);
+        }
     }
 </style>
