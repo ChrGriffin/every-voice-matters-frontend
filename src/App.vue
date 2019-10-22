@@ -9,6 +9,8 @@
   @import './../node_modules/blear.scss.clearfix/src/index';
   @import './assets/scss/variables.scss';
 
+  @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i&display=swap');
+
   @font-face {
     font-family: 'big-noodle-titling-oblique';
     src: url('./assets/fonts/big_noodle_titling_oblique.woff2') format('woff2'),
@@ -22,7 +24,7 @@
   }
 
   #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
@@ -44,6 +46,14 @@
     font-size: 4rem;
     line-height: 0.8;
     margin: 1rem 0 3rem;
+  }
+
+  p {
+    line-height: 1.2;
+  }
+
+  .italic {
+    font-style: italic;
   }
 
   section .timeline {

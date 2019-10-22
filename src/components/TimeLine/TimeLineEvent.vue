@@ -175,10 +175,6 @@
 
         .content {
 
-            p {
-                line-height: 1.2;
-            }
-
             a {
                 display: inline-block;
                 margin-top: 1rem;
