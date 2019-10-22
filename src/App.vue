@@ -44,7 +44,22 @@
     text-align: left;
     font-size: 4rem;
     line-height: 0.8;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    text-align: left;
+    padding-bottom: 1rem;
+  }
+
+  ul {
+    text-align: left;
+    list-style: disc;
+    padding-left: 2rem;
+
+    li {
+    padding-bottom: 1rem;
+    }
   }
 
   section .timeline {

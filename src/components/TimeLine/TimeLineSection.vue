@@ -29,6 +29,7 @@
     h2 {
         padding-left: $sectionPadding;
         padding-right: $sectionPadding;
+        margin-bottom: 1rem;
     }
 
     section {
