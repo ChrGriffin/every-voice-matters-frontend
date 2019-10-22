@@ -16,7 +16,7 @@
     import FreeHongKong from '@/components/Support/FreeHongKong.vue';
 
     @Component({
-        components: {FreeHongKong, BoycottBlizzard}
+        components: { FreeHongKong, BoycottBlizzard },
     })
 
     export default class SupportSection extends Vue {

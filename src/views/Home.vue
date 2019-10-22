@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-    import {Component, Vue} from 'vue-property-decorator';
+    import { Component, Vue } from 'vue-property-decorator';
     import MainNav from '@/components/MainNav.vue';
     import SiteHero from '@/components/SiteHero/SiteHero.vue';
     import SummarySection from '@/components/Summary/SummarySection.vue';
