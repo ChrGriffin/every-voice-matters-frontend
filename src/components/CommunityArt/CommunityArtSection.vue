@@ -1,5 +1,5 @@
 <template>
-    <section class="fan-art">
+    <section id="community-art">
         <h2>Community Art</h2>
         <community-art-grid />
     </section>

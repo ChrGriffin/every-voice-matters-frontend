@@ -1,5 +1,5 @@
 <template>
-    <section class="timeline">
+    <section id="timeline">
         <h2>Timeline of Events</h2>
         <time-line/>
     </section>
@@ -29,6 +29,7 @@
     h2 {
         padding-left: $sectionPadding;
         padding-right: $sectionPadding;
+        margin-bottom: 1rem;
     }
 
     section {

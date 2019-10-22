@@ -1,6 +1,16 @@
 <template>
-    <div v-masonry transition-duration="0s" item-selector="section.fan-art .item" column-width="section.fan-art .item" :gutter="20">
-        <community-art-item v-for="art in communityArt" v-masonry-tile :key="art.image" :image="art.image" :label="art.description" :author="art.author" />
+    <div v-masonry
+         transition-duration="0s"
+         item-selector="section#community-art .item"
+         column-width="section#community-art .item"
+         :gutter="20">
+
+        <community-art-item v-for="art in communityArt"
+                            v-masonry-tile
+                            :key="art.image"
+                            :image="art.image"
+                            :label="art.description"
+                            :author="art.author" />
     </div>
 </template>
 

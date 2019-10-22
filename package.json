@@ -22,7 +22,8 @@
     "vue-class-component": "^7.0.2",
     "vue-masonry": "^0.11.8",
     "vue-property-decorator": "^8.1.0",
-    "vue-router": "^3.0.3"
+    "vue-router": "^3.0.3",
+    "vue-scrollactive": "^0.8.0"
   },
   "devDependencies": {
     "@types/jest": "^23.1.4",

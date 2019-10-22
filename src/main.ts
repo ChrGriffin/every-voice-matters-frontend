@@ -7,6 +7,9 @@ Vue.config.productionTip = false;
 import {VueMasonryPlugin} from 'vue-masonry';
 Vue.use(VueMasonryPlugin);
 
+import VueScrollactive from 'vue-scrollactive';
+Vue.use(VueScrollactive);
+
 new Vue({
   router,
   render: (h) => h(App),
