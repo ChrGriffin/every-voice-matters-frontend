@@ -1,5 +1,5 @@
 <template>
-    <section class="support">
+    <section id="support">
         <article>
             <boycott-blizzard />
         </article>

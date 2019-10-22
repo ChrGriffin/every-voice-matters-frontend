@@ -1,5 +1,5 @@
 <template>
-    <div v-masonry transition-duration="0s" item-selector="section.fan-art .item" column-width="section.fan-art .item" :gutter="20">
+    <div v-masonry transition-duration="0s" item-selector="section#community-art .item" column-width="section#community-art .item" :gutter="20">
         <community-art-item v-for="art in communityArt" v-masonry-tile :image="art.image" :label="art.description" :author="art.author" />
     </div>
 </template>
