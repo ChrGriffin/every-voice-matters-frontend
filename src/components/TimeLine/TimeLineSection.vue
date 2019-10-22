@@ -1,7 +1,9 @@
 <template>
     <section id="timeline">
         <h2>Timeline of Events</h2>
-        <time-line/>
+        <div class="row">
+            <time-line/>
+        </div>
     </section>
 </template>
 
@@ -25,6 +27,11 @@
 
 <style lang="scss" scoped>
     @import './../../assets/scss/variables';
+
+    .row {
+        margin: 0 auto;
+        max-width: 120rem;
+    }
 
     h2 {
         padding-left: $sectionPadding;

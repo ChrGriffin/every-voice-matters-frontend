@@ -4,8 +4,8 @@
         <site-hero/>
         <summary-section/>
         <time-line-section/>
-        <community-art-section/>
         <support-section/>
+        <community-art-section/>
     </div>
 </template>
 

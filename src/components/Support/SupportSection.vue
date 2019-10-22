@@ -1,12 +1,14 @@
 <template>
     <section id="support">
-        <article>
-            <boycott-blizzard />
-        </article>
+        <div class="row">
+            <article>
+                <boycott-blizzard />
+            </article>
 
-        <article>
-            <free-hong-kong />
-        </article>
+            <article>
+                <free-hong-kong />
+            </article>
+        </div>
     </section>
 </template>
 
@@ -26,7 +28,9 @@
 <style lang="scss" scoped>
     @import './../../assets/scss/variables';
 
-    section {
+    .row {
+        max-width: 80rem;
+        margin: 0 auto;
         display: flex;
 
         article {

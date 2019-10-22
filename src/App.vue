@@ -59,6 +59,7 @@
     }
 
     ul {
+        line-height: 1.2;
         text-align: left;
         list-style: disc;
         padding-left: 2rem;
