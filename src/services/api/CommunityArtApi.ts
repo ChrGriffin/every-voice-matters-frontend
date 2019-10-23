@@ -196,6 +196,22 @@ export default class CommunityArtApi {
                     url: 'https://www.reddit.com/user/philtomato/',
                 },
             },
+            {
+                image: 'https://scontent-yyz1-1.cdninstagram.com/vp/a93821ec2fa49dabc2c8fb483b355fc4/5E27FC35/t51.2885-15/e35/s1080x1080/74687632_1636725199792183_7128597194021099517_n.jpg?_nc_ht=scontent-yyz1-1.cdninstagram.com&_nc_cat=107',
+                description: 'Mei helping a Hong Kong protestor',
+                author: {
+                    name: '@templeoftales',
+                    url: 'https://www.instagram.com/templeoftales/',
+                },
+            },
+            {
+                image: 'https://i.imgur.com/RdV4gF6.jpg',
+                description: 'Mei encouraging the Hong Kong protestors to "keep going"',
+                author: {
+                    name: 'morgan_blorgon',
+                    url: 'https://www.reddit.com/user/morgan_blorgon/',
+                },
+            },
         ];
     }
 }
