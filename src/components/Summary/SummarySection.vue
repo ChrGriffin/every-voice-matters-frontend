@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section id="summary">
         <div class="row">
             <div class="column">
                 <p>That's what Blizzard told us they believed.</p>
@@ -77,5 +77,31 @@
 
     img {
         width: 100%;
+    }
+
+    @media screen and (max-width: $mediumScreen) {
+
+       .row {
+           display: block;
+
+           .column {
+
+               &:first-child {
+                   padding-right: 0;
+                   width: 100%;
+               }
+
+               &:last-child {
+                   padding-left: 0;
+                   width: 100%;
+                   text-align: center;
+               }
+           }
+
+           img {
+               margin-top: 1rem;
+               max-width: 30rem;
+           }
+       }
     }
 </style>

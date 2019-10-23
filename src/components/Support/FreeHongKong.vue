@@ -32,4 +32,11 @@
 
 <style lang="scss" scoped>
     @import './../../assets/scss/variables';
+
+    h3 {
+        text-align: left;
+        font-size: 1.4rem;
+        margin: 1rem 0;
+        font-weight: bold;
+    }
 </style>

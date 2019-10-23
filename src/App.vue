@@ -1,8 +1,22 @@
 <template>
     <div id="app">
-        <router-view/>
+        <router-view />
+        <site-footer />
     </div>
 </template>
+
+<script lang="ts">
+    import Vue from 'vue';
+    import Component from 'vue-class-component';
+    import SiteFooter from '@/components/SiteFooter.vue';
+
+    @Component({
+        components: { SiteFooter },
+    })
+
+    export default class App extends Vue {
+    }
+</script>
 
 <style lang="scss">
     @import './../node_modules/css-reset-and-normalize/scss/reset-and-normalize';
@@ -13,7 +27,7 @@
     @font-face {
         font-family: 'big-noodle-titling-oblique';
         src: url('./assets/fonts/big_noodle_titling_oblique.woff2') format('woff2'),
-        url('./assets/fonts/big_noodle_titling_oblique.woff') format('woff');
+             url('./assets/fonts/big_noodle_titling_oblique.woff') format('woff');
         font-weight: normal;
         font-style: normal;
     }
@@ -45,13 +59,6 @@
         font-size: 4rem;
         line-height: 0.8;
         margin: 1rem 0 3rem;
-    }
-
-    h3 {
-        text-align: left;
-        font-size: 1.4rem;
-        margin: 1rem 0;
-        font-weight: bold;
     }
 
     .italic {
