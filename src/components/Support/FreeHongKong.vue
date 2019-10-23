@@ -12,7 +12,7 @@
             <li>And the resignation of Chief Executive Carrie Lam and implementation of universal suffrage for Hong Kong elections.</li>
         </ul>
         <p>As of September 2019, Carrie Lam has promised to officially withdraw the bill in October 2019, but has dismissed the protestors' other four demands.</p>
-        <h3>How you can Help</h3>
+        <h3>How You Can Help</h3>
         <p>Unfortunately, there's isn't much that Western activists can do to directly help the Hong Kong protestors. The protestors are not a centralized or formal organization; there's no single group to donate money to. Here's what you <span class="italic">can</span> do:</p>
         <ul>
             <li>Continue pressuring Blizzard Activision, and other Western corporations, to withdraw their support (whether implicit or explicit) from the CCP</li>

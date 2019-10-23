@@ -47,6 +47,13 @@
         margin: 1rem 0 3rem;
     }
 
+    h3 {
+        text-align: left;
+        font-size: 1.4rem;
+        margin: 1rem 0;
+        font-weight: bold;
+    }
+
     .italic {
         font-style: italic;
         margin-bottom: 2rem;
