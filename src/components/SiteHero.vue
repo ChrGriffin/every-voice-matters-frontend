@@ -36,7 +36,7 @@
 </script>
 
 <style scoped lang="scss">
-    @import '../../assets/scss/variables';
+    @import '../assets/scss/variables';
 
     header {
         padding: 8rem 0 9rem;

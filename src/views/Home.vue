@@ -12,8 +12,8 @@
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
     import MainNav from '@/components/MainNav.vue';
-    import SiteHero from '@/components/SiteHero/SiteHero.vue';
-    import SummarySection from '@/components/Summary/SummarySection.vue';
+    import SiteHero from '@/components/SiteHero.vue';
+    import SummarySection from '@/components/SummarySection.vue';
     import TimeLineSection from '@/components/TimeLine/TimeLineSection.vue';
     import CommunityArtSection from '@/components/CommunityArt/CommunityArtSection.vue';
     import SupportSection from '@/components/Support/SupportSection.vue';

@@ -13,7 +13,7 @@
             </div>
 
             <div class="column">
-                <img :src="require('./../../assets/images/raynor.png')" alt="Fight for Freedom poster with Jim Raynor">
+                <img :src="require('../assets/images/raynor.png')" alt="Fight for Freedom poster with Jim Raynor">
             </div>
         </div>
     </section>
@@ -29,7 +29,7 @@
 </script>
 
 <style scoped lang="scss">
-    @import '../../assets/scss/variables';
+    @import '../assets/scss/variables';
 
     section {
         text-align: left;
