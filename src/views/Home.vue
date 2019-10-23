@@ -18,7 +18,6 @@
     import CommunityArtSection from '@/components/CommunityArt/CommunityArtSection.vue';
     import SupportSection from '@/components/Support/SupportSection.vue';
 
-
     @Component({
         components: {
             MainNav,
