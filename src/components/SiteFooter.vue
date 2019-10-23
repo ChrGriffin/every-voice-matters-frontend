@@ -30,6 +30,10 @@
     footer {
         background: black;
         padding: 1rem 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
 
         .row {
             max-width: 80rem;

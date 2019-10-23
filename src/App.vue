@@ -33,7 +33,10 @@
     }
 
     body {
+        position: relative;
         background-color: $offWhite;
+        min-height: 100vh;
+        padding-bottom: 3rem;
     }
 
     #app {
@@ -80,6 +83,24 @@
 
         li {
             padding-bottom: 1rem;
+        }
+    }
+
+    button {
+        font-family: 'big-noodle-titling-oblique', sans-serif;
+        background-color: black;
+        color: $white;
+        border: none;
+        padding: 0.75rem 1rem;
+        font-size: 1.4rem;
+
+        &:hover {
+            cursor: pointer;
+            color: $yellow;
+        }
+
+        &:active {
+            color: $red;
         }
     }
 
