@@ -55,12 +55,12 @@
                     margin: 0 1rem;
                     font-size: 1.6rem;
 
-                    &:hover {
-                        color: $yellow;
-                    }
-
                     &.router-link-active {
                         color: $red;
+                    }
+
+                    &:hover {
+                        color: $yellow;
                     }
                 }
 
