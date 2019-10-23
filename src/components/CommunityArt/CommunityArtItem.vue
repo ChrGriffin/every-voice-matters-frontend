@@ -14,7 +14,7 @@
 
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
-    import { CommunityArtAuthor } from '@/services/repositories/types';
+    import { CommunityArtAuthor } from '@/repositories/types';
 
     @Component({})
     export default class CommunityArtItem extends Vue {

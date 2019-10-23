@@ -9,7 +9,7 @@ export default class TimelineEventsRepository {
                 text: 'During a post-match interview, Hearthstone Grandmasters competitor Blitzchung makes a statement supporting Hong Kong\'s freedom.',
                 condensed: false,
                 time: new Date('October 6, 2019 00:00:00 EDT'),
-                icon: require('./../../assets/images/hongkong.svg'),
+                icon: require('../assets/images/hongkong.svg'),
                 attachments: [
                     {
                         type: EventAttachmentType.url,
@@ -23,7 +23,7 @@ export default class TimelineEventsRepository {
                 text: 'Blizzard Entertainment rules that Blitzchung\'s statement violates their tournament rules. They ban Blitzchung from competing for 12 months, revoke his prize winnings, and state that they will "immediately cease working with both casters" who conducted the interview. Many fans believe this is to appease the Chinese Communist Party, and react extremely negatively, kickstarting the #BoycottBlizzard movement.',
                 condensed: false,
                 time: new Date('2019-10-08T04:40:00+00:00'),
-                icon: require('./../../assets/images/hearthstone.svg'),
+                icon: require('../assets/images/hearthstone.svg'),
                 attachments: [
                     {
                         type: EventAttachmentType.url,
@@ -37,7 +37,7 @@ export default class TimelineEventsRepository {
                 text: 'Blizzard\'s official Hearthstone Weibo (a Chinese social media site) account posts a response to Blitzchung\'s statement. In it, they profess "strong indignation and condemnation" and promise to "resolutely safeguard national [Chinese] dignity".',
                 condensed: false,
                 time: new Date('October 8, 2019 00:48:00 EDT'),
-                icon: require('./../../assets/images/weibo.svg'),
+                icon: require('../assets/images/weibo.svg'),
                 attachments: [
                     {
                         type: EventAttachmentType.url,
@@ -99,7 +99,7 @@ export default class TimelineEventsRepository {
                 text: 'The Overwatch character Mei begins to emerge as a symbol of the Hong Kong protest amongst gamers, partially due to an effort by Western gamers to have Overwatch banned in China.',
                 condensed: false,
                 time: new Date('October 8, 2019 12:57:12 EDT'),
-                icon: require('./../../assets/images/mei.svg'),
+                icon: require('../assets/images/mei.svg'),
                 attachments: [
                     {
                         type: EventAttachmentType.url,
@@ -165,7 +165,7 @@ export default class TimelineEventsRepository {
                 text: 'The president of Blizzard Entertainment posts an open letter to the Blizzard community. In it, he concedes that Blizzard may have "reacted too quickly", and reduces Blitzchung\'s suspension from 12 months to 6 months, and restores his winnings. He also reduces the casters\' suspensions to 6 months. No apology is offered to Blitzchung, the casters, or the community, and he makes it clear that streamers/competitors will continue to be banned for bringing up political topics.' ,
                 condensed: false,
                 time: new Date('Sat Oct 12 2019 00:18:58 GMT+0000'),
-                icon: require('./../../assets/images/blizzard.svg'),
+                icon: require('../assets/images/blizzard.svg'),
                 attachments: [
                     {
                         type: EventAttachmentType.url,
@@ -193,7 +193,7 @@ export default class TimelineEventsRepository {
                 text: 'With less than 48 hours until the official launch event for Overwatch on the Nintendo Switch, Blizzard announces that they are cancelling the event. No official reason is given. This is widely speculated to be due to the potential for public protests at the event.',
                 condensed: false,
                 time: new Date('Oct 15, 2019, 09:32:00 EDT'),
-                icon: require('./../../assets/images/switch.svg'),
+                icon: require('../assets/images/switch.svg'),
                 attachments: [
                     {
                         type: EventAttachmentType.url,
@@ -207,7 +207,7 @@ export default class TimelineEventsRepository {
                 text: 'A letter signed by Ron Wyden and Marco Rubio (US Senators), and Alexandria Ocasio-Cortez, Mike Gallagher, and Tom Malinowski (US Members of Congress) is sent to Bobby Kotick, the CEO of Blizzard Activision. The letter chastises Blizzard Activision for seemingly caving to pressure from the Chinese government, references the #BoycottBlizzard movement, and suggests the company reverse course.',
                 condensed: false,
                 time: new Date('Oct 18, 2019, 16:00:00 EDT'),
-                icon: require('./../../assets/images/congress.svg'),
+                icon: require('../assets/images/congress.svg'),
                 attachments: [
                     {
                         type: EventAttachmentType.url,

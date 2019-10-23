@@ -16,8 +16,8 @@
 
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
-    import CommunityArtRepository from '@/services/repositories/CommunityArtRepository';
-    import { CommunityArt } from '@/services/repositories/types';
+    import CommunityArtRepository from '@/repositories/CommunityArtRepository';
+    import { CommunityArt } from '@/repositories/types';
     import CommunityArtItem from '@/components/CommunityArt/CommunityArtItem.vue';
 
     @Component({

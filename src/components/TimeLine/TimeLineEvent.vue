@@ -14,7 +14,7 @@
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
     import { Direction } from '../types';
-    import { EventAttachment } from '@/services/repositories/types';
+    import { EventAttachment } from '@/repositories/types';
 
     @Component
     export default class TimeLineEvent extends Vue {

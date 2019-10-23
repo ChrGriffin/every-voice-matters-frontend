@@ -15,8 +15,8 @@
 
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
-    import TimelineEventsRepository from '@/services/repositories/TimelineEventsRepository';
-    import { Event, EventAttachment, EventAttachmentType } from '@/services/repositories/types';
+    import TimelineEventsRepository from '@/repositories/TimelineEventsRepository';
+    import { Event, EventAttachment, EventAttachmentType } from '@/repositories/types';
     import TimeLineEvent from '@/components/TimeLine/TimeLineEvent.vue';
     import { Direction } from '@/components/types';
 
