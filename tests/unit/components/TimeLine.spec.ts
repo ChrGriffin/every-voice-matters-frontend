@@ -1,11 +1,11 @@
 import { mount } from '@vue/test-utils';
 import TimeLine from '@/components/TimeLine/TimeLine.vue';
 import TimeLineEvent from '@/components/TimeLine/TimeLineEvent.vue';
-import * as TimelineApi from '@/repositories/TimelineApi';
+import * as TimelineRepository from '@/repositories/TimelineEventsRepository';
 import { ImportMock } from 'ts-mock-imports';
 import {Event} from '@/repositories/types';
 
-const MockedTimelineApi = ImportMock.mockClass(TimelineApi);
+const MockedTimelineRepository = ImportMock.mockClass(TimelineRepository);
 
 const events: Event[] = [
     {
@@ -53,15 +53,15 @@ const events: Event[] = [
 describe('TimeLine.vue', () => {
 
     beforeEach(() => {
-        MockedTimelineApi.restore();
-        MockedTimelineApi.mock('getEvents', events);
+        MockedTimelineRepository.restore();
+        MockedTimelineRepository.mock('getEvents', events);
     });
 
     it('renders a timeline of events from the API', (done) => {
 
         const wrapper = mount(TimeLine, {
             propsData: {
-                timelineApi: MockedTimelineApi.getMockInstance(),
+                timelineEventsRepository: MockedTimelineRepository.getMockInstance(),
             },
         });
 
@@ -81,7 +81,7 @@ describe('TimeLine.vue', () => {
 
         const wrapper = mount(TimeLine, {
             propsData: {
-                timelineApi: MockedTimelineApi.getMockInstance(),
+                timelineEventsRepository: MockedTimelineRepository.getMockInstance(),
             },
         });
 
