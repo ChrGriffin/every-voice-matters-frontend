@@ -16,7 +16,7 @@
 
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
-    import CommunityArtApi from '@/services/repositories/CommunityArtApi';
+    import CommunityArtRepository from '@/services/repositories/CommunityArtRepository';
     import { CommunityArt } from '@/services/repositories/types';
     import CommunityArtItem from '@/components/CommunityArt/CommunityArtItem.vue';
 
@@ -26,14 +26,14 @@
     export default class CommunityArtGrid extends Vue {
         @Prop({
             default: () => {
-                return new CommunityArtApi();
+                return new CommunityArtRepository();
             },
-        }) public communityArtApi!: CommunityArtApi;
+        }) public communityArtRepository!: CommunityArtRepository;
 
         public communityArt: CommunityArt[] = [];
 
         public getFanArt(): void {
-            this.communityArt = this.communityArtApi.getArt();
+            this.communityArt = this.communityArtRepository.getArt();
         }
 
         private mounted() {

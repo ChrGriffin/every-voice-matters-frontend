@@ -15,7 +15,7 @@
 
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
-    import TimelineApi from '@/services/repositories/TimelineApi';
+    import TimelineEventsRepository from '@/services/repositories/TimelineEventsRepository';
     import { Event, EventAttachment, EventAttachmentType } from '@/services/repositories/types';
     import TimeLineEvent from '@/components/TimeLine/TimeLineEvent.vue';
     import { Direction } from '@/components/types';
@@ -27,14 +27,14 @@
     export default class TimeLine extends Vue {
         @Prop({
             default: () => {
-                return new TimelineApi();
+                return new TimelineEventsRepository();
             },
-        }) public timelineApi!: TimelineApi;
+        }) public timelineEventsRepository!: TimelineEventsRepository;
 
         public events: Event[] = [];
 
         public getEvents(): void {
-            this.events = this.timelineApi.getEvents();
+            this.events = this.timelineEventsRepository.getEvents();
         }
 
         public getDirection(event: Event): Direction {

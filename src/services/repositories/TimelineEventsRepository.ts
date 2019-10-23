@@ -1,6 +1,6 @@
 import { Event, EventAttachmentType } from './types';
 
-export default class TimelineApi {
+export default class TimelineEventsRepository {
 
     public getEvents(): Event[] {
         return [

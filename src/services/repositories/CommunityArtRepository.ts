@@ -1,6 +1,6 @@
 import { CommunityArt } from './types';
 
-export default class CommunityArtApi {
+export default class CommunityArtRepository {
 
     public getArt(): CommunityArt[] {
         return [
