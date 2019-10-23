@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils';
 import TimeLine from '@/components/TimeLine/TimeLine.vue';
 import TimeLineEvent from '@/components/TimeLine/TimeLineEvent.vue';
-import * as TimelineApi from '@/services/api/TimelineApi';
+import * as TimelineApi from '@/services/repositories/TimelineApi';
 import { ImportMock } from 'ts-mock-imports';
-import {Event} from '@/services/api/types';
+import {Event} from '@/services/repositories/types';
 
 const MockedTimelineApi = ImportMock.mockClass(TimelineApi);
 

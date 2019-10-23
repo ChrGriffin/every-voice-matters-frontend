@@ -1,4 +1,4 @@
-import TimelineApi from '@/services/api/TimelineApi.ts';
+import TimelineApi from '@/services/repositories/TimelineApi.ts';
 
 describe('TimelineApi.ts', () => {
     it('returns an array of events', () => {
