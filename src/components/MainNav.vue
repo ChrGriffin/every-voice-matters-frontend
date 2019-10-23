@@ -1,9 +1,12 @@
 <template>
     <scrollactive :offset="60">
-        <a href="#summary" class="scrollactive-item">Summary</a>
-        <a href="#timeline" class="scrollactive-item">Timeline of Events</a>
-        <a href="#support" class="scrollactive-item">Support</a>
-        <a href="#community-art" class="scrollactive-item">Community Art</a>
+        <ul>
+            <li><a href="#summary" class="scrollactive-item">Summary</a></li>
+            <li><a href="#timeline" class="scrollactive-item">Timeline of Events</a></li>
+            <li><a href="#support" class="scrollactive-item">Support</a></li>
+            <li><a href="#community-art" class="scrollactive-item">Community Art</a></li>
+            <li></li>
+        </ul>
     </scrollactive>
 </template>
 
@@ -28,27 +31,37 @@
         width: 100%;
         z-index: 99;
 
-        a {
-            color: $white;
-            font-family: 'big-noodle-titling-oblique', sans-serif;
-            text-decoration: none;
-            margin: 0 2rem;
-            font-size: 1.6rem;
+        ul {
+            list-style: none;
+            text-align: center;
 
-            &:first-child {
-                padding-left: 0;
-            }
+            li {
+                display: inline-block;
+                padding-bottom: 0;
 
-            &:last-child {
-                padding-right: 0;
-            }
+                &:first-child a {
+                    margin-left: 0;
+                }
 
-            &.is-active {
-                color: $red;
-            }
+                &:last-child a {
+                    margin-right: 0;
+                }
 
-            &:hover {
-                color: $yellow;
+                a {
+                    color: $white;
+                    font-family: 'big-noodle-titling-oblique', sans-serif;
+                    text-decoration: none;
+                    margin: 0 2rem;
+                    font-size: 1.6rem;
+
+                    &.is-active {
+                        color: $red;
+                    }
+
+                    &:hover {
+                        color: $yellow;
+                    }
+                }
             }
         }
     }
