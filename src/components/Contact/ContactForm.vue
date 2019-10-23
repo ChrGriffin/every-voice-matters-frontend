@@ -66,6 +66,7 @@
                 return false;
             }
 
+            this.removeInvalidField('name');
             return true;
         }
 
@@ -75,6 +76,7 @@
                 return false;
             }
 
+            this.removeInvalidField('email');
             return true;
         }
 
@@ -85,6 +87,7 @@
                 return false;
             }
 
+            this.removeInvalidField('message');
             return true;
         }
 
@@ -92,9 +95,16 @@
 
         }
 
-        private pushInvalidField(field: string) : void {
+        private pushInvalidField(field: string): void {
             if(!this.invalidFields.includes(field)) {
                 this.invalidFields.push(field);
+            }
+        }
+
+        private removeInvalidField(field: string): void {
+            const index = this.invalidFields.indexOf(field);
+            if(index > -1) {
+                this.invalidFields.splice(index, 1);
             }
         }
     }

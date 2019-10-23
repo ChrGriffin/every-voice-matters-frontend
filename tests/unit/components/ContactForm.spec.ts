@@ -4,8 +4,7 @@ import ContactForm from '@/components/Contact/ContactForm.vue';
 const invalidFields = [
     {description: 'empty name', field: 'name', value: '', error: 'Name is required.'},
     {description: 'empty email', field: 'email', value: '', error: 'Email is required.'},
-    {description: 'invalid email without @', field: 'email', value: 'notAnEmail', error: 'Email is invalid.'},
-    {description: 'invalid email with @', field: 'email', value: 'alsonot@nemail', error: 'Email is invalid.'},
+    {description: 'invalid email', field: 'email', value: 'not@nemail', error: 'Email is invalid.'},
     {description: 'empty message', field: 'message', value: '', error: 'Message is required.'},
 ];
 
@@ -52,6 +51,27 @@ describe('ContactForm.vue', () => {
             formInput.setValue(dataset.value);
             formInput.trigger('blur');
             expect(formInput.element.classList.contains('error')).toBe(true);
+        });
+    });
+
+    validFields.forEach((dataset) => {
+
+        it(`removes error class from a formerly invalid field on blur with dataset: ${dataset.description}`, () => {
+
+            const wrapper = shallowMount(ContactForm);
+            const formInput = wrapper.find(`[name="${dataset.field}"]`);
+            expect(formInput.element.classList.contains('error')).toBe(false);
+
+            const invalidFieldDataset = invalidFields
+                .filter((validFieldDataset) => validFieldDataset.field === dataset.field)[0];
+
+            formInput.setValue(invalidFieldDataset.value);
+            formInput.trigger('blur');
+            expect(formInput.element.classList.contains('error')).toBe(true);
+
+            formInput.setValue(dataset.value);
+            formInput.trigger('blur');
+            expect(formInput.element.classList.contains('error')).toBe(false);
         });
     });
 
