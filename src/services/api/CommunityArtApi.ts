@@ -132,6 +132,70 @@ export default class CommunityArtApi {
                     url: null,
                 },
             },
+            {
+                image: 'https://preview.redd.it/ru8xoagj4zt31.png?width=640&crop=smart&auto=webp&s=fa609dd3c2c9a810197a64bed79bf10046a69cc9',
+                description: 'Mei with a glowing Hong Kong symbol',
+                author: {
+                    name: 'Schlusse1',
+                    url: 'https://www.reddit.com/user/Schlusse1/',
+                },
+            },
+            {
+                image: 'https://external-preview.redd.it/MX1Wq8iPHnIxF1dgSLgbnTm8QInxubiz68sFiS53ODw.jpg?width=640&crop=smart&auto=webp&s=b76b61e467060cfb2cd87183a372a3c55328d94d',
+                description: 'Roadhog with a Winnie the Pooh tattoo and an umbrella',
+                author: {
+                    name: 'SeanyBee',
+                    url: 'https://www.reddit.com/user/SeanyBee/',
+                },
+            },
+            {
+                image: 'https://preview.redd.it/hpsoo9r9idt31.jpg?width=960&crop=smart&auto=webp&s=ad3f45a673aedcc0c88ba2fcfa018559bead13bf',
+                description: 'A pin with an image of Mei in a facemask',
+                author: {
+                    name: 'ladyzephri',
+                    url: 'https://www.reddit.com/user/ladyzephri/',
+                },
+            },
+            {
+                image: 'https://preview.redd.it/p78pfy4f7dt31.png?width=960&crop=smart&auto=webp&s=db7c8a83a9fd46a355246905d0caf932377962b9',
+                description: 'Mei in a hard hat n front of a Hong Kong flag',
+                author: {
+                    name: 'Iwasapirateonce',
+                    url: 'https://www.reddit.com/user/Iwasapirateonce/',
+                },
+            },
+            {
+                image: 'https://preview.redd.it/jjsj81t9sxt31.jpg?width=640&crop=smart&auto=webp&s=a5e3a5cee968c2635c60046fea22707d1a4bf2ff',
+                description: 'D.va in a gas mask holding a Hong Kong flag',
+                author: {
+                    name: 'PaulTheAquarist',
+                    url: 'https://www.reddit.com/user/PaulTheAquarist/',
+                },
+            },
+            {
+                image: 'https://preview.redd.it/rddafmwthfs31.jpg?width=640&crop=smart&auto=webp&s=7dd31f24fdc8b04e20171c009e9318e368e5bb72',
+                description: 'Mei with the words "Can you hear the people sing?"',
+                author: {
+                    name: 'mitox11',
+                    url: 'https://www.reddit.com/user/mitox11/',
+                },
+            },
+            {
+                image: 'https://preview.redd.it/pqtfcmmyrjs31.jpg?width=640&crop=smart&auto=webp&s=427beebd47d8496a904f5f086196837af60bf4ac',
+                description: 'A sticker of Mei carrying an umbrella',
+                author: {
+                    name: 'AlefYodhAlef',
+                    url: 'https://www.redbubble.com/people/alefyodhalef',
+                },
+            },
+            {
+                image: 'https://preview.redd.it/9epa7y4gyks31.jpg?width=640&crop=smart&auto=webp&s=7075e44a5a98031030da5f3a4b41dabd9d5dcbc9',
+                description: 'Mei carrying an umbrella with a face mask',
+                author: {
+                    name: 'philtomato',
+                    url: 'https://www.reddit.com/user/philtomato/',
+                },
+            },
         ];
     }
 }

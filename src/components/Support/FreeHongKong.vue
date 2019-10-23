@@ -13,7 +13,7 @@
         </ul>
         <p>As of September 2019, Carrie Lam has promised to officially withdraw the bill in October 2019, but has dismissed the protestors' other four demands.</p>
         <h3>How you can Help</h3>
-        <p>Unfortunately, there's isn't much that Western activists can do to directly help the Hong Kong protestors. The protestors are not a centralized or formal organization; there's no single group to donate money to. Here's what you <em>can</em> do:</p>
+        <p>Unfortunately, there's isn't much that Western activists can do to directly help the Hong Kong protestors. The protestors are not a centralized or formal organization; there's no single group to donate money to. Here's what you <span class="italic">can</span> do:</p>
         <ul>
             <li>Continue pressuring Blizzard Activision, and other Western corporations, to withdraw their support (whether implicit or explicit) from the CCP</li>
             <li>Donate to the <a href="https://www.hongkongfp.com/support-hkfp/" target="_blank">Hong Kong Free Press</a></li>

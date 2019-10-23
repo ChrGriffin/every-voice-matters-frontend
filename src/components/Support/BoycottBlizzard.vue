@@ -4,7 +4,7 @@
         <p>Blizzard proved that when push comes to shove, they'll side with a tyrannical government over their community and the values they espouse. Many former fans are now calling for a boycott of the company. Here's what you can do:</p>
         <ul>
             <li><strong>Do not purchase or play any Blizzard Activison games</strong>. This is the ideal boycott.</li>
-            <li>Alternatively, <strong>only play legacy games</strong>. These games were made in another time, by another Blizzard. <em>Do not purchase these games if you do not already own them</em>. Activison Blizzard will still receive money from your purchase, even if you buy on GOG.</li>
+            <li>Alternatively, <strong>only play legacy games</strong>. These games were made in another time, by another Blizzard. <span class="italic">Do not purchase these games if you do not already own them</span>. Activison Blizzard will still receive money from your purchase, even if you buy on GOG.</li>
             <li>At the very least, <strong>do not purchase any new Blizzard Activision games</strong>, and <strong>do not participate in any online Blizzard content</strong> (World of Warcraft, Overwatch, Diablo 3 multiplayer, Starcraft 2 multiplayer), even if you already purchased the game. This content depends on players being active and online in order to be enjoyable. By participating in the online content, you contribute to its overall health and incentivize others to purchase the game.</li>
         </ul>
         <p>Additionally:</p>
