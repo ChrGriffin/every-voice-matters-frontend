@@ -21,6 +21,8 @@
     @import '../../assets/scss/variables';
 
     form {
-        width: 50%;
+        text-align: left;
+        max-width: 50rem;
+        margin: 0 auto;
     }
 </style>

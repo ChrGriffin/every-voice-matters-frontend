@@ -1,20 +1,38 @@
 <template>
     <form method="post" name="submit-new" netlify>
         <div class="input-wrapper">
-            <label for="contact-name">Name</label>
-            <input type="text" id="contact-name" name="name" />
+            <label for="contact-name" class="required">Name</label>
+            <input type="text"
+                   id="contact-name"
+                   name="name"
+                   v-on:blur="validateName"
+                   :class="(!nameIsValid ? '' : 'error')"
+                   v-model="name"
+                   required />
         </div>
 
         <div class="input-wrapper">
-            <label for="contact-email">Email</label>
-            <input type="email" id="contact-email" name="email" />
+            <label for="contact-email" class="required">Email</label>
+            <input type="email"
+                   id="contact-email"
+                   name="email"
+                   v-on:blur="validateEmail"
+                   :class="(!emailIsValid ? '' : 'error')"
+                   v-model="email"
+                   required />
         </div>
 
-        <label for="contact-message">Message</label>
-        <textarea id="contact-message" name="message" rows="6"></textarea>
+        <label for="contact-message" class="required">Message</label>
+        <textarea id="contact-message"
+                  name="message"
+                  rows="6"
+                  v-on:blur="validateMessage"
+                  :class="(!messageIsValid ? '' : 'error')"
+                  v-model="message"
+                  required></textarea>
 
         <div class="button-wrapper">
-            <button type="submit">Send Message</button>
+            <button type="button" v-on:click="postMessage">Send Message</button>
         </div>
     </form>
 </template>
@@ -25,17 +43,65 @@
     @Component({})
     export default class ContactForm extends Vue {
 
+        public name: string = '';
+        public email: string = '';
+        public message: string = '';
+        public invalidFields: string[] = [];
+
+        get nameIsValid(): boolean {
+            return this.invalidFields.includes('name');
+        }
+
+        get emailIsValid(): boolean {
+            return this.invalidFields.includes('email');
+        }
+
+        get messageIsValid(): boolean {
+            return this.invalidFields.includes('message');
+        }
+
+        public validateName(): boolean {
+            if(this.name.length <= 0) {
+                this.pushInvalidField('name');
+                return false;
+            }
+
+            return true;
+        }
+
+        public validateEmail(): boolean {
+            if(! /\S+@\S+\.\S+/.test(this.email)) {
+                this.pushInvalidField('email');
+                return false;
+            }
+
+            return true;
+        }
+
+        public validateMessage(): boolean {
+
+            if(this.message.length <= 0) {
+                this.pushInvalidField('message');
+                return false;
+            }
+
+            return true;
+        }
+
+        public postMessage(): void {
+
+        }
+
+        private pushInvalidField(field: string) : void {
+            if(!this.invalidFields.includes(field)) {
+                this.invalidFields.push(field);
+            }
+        }
     }
 </script>
 
 <style scoped lang="scss">
     @import '../../assets/scss/variables';
-
-    form {
-        text-align: left;
-        max-width: 80rem;
-        margin: 0 auto;
-    }
 
     .input-wrapper {
         float: left;
@@ -57,13 +123,25 @@
         clear: both;
         margin-bottom: 0.25rem;
         font-style: italic;
+
+        &.required:after {
+            display: inline;
+            content: '*';
+            color: $red;
+            padding-left: 0.25rem;
+        }
     }
 
     input, textarea {
+        background-color: $white;
         width: 100%;
-        border: none;
         padding: 0.5rem 0.75rem;
         margin-bottom: 1rem;
+        border: 2px solid $white;
+
+        &.error {
+            border: 2px solid red;
+        }
     }
 
     .button-wrapper {
