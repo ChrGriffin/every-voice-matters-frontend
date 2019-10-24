@@ -57,4 +57,18 @@
             text-align: left;
         }
     };
+
+    @media screen and (max-width: $mediumScreen) {
+
+        .item {
+            width: calc(33% - 11px);
+        }
+    }
+
+    @media screen and (max-width: $smallScreen) {
+
+        .item {
+            width: calc(50% - 10px);
+        }
+    }
 </style>
