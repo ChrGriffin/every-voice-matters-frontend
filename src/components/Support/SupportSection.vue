@@ -32,16 +32,35 @@
         max-width: $textWidth;
         margin: 0 auto;
         display: flex;
+    }
+
+    article {
+        flex: 1;
+
+        &:first-child {
+            padding-right: $sectionPadding / 2;
+        }
+
+        &:last-child {
+            padding-left: $sectionPadding / 2;
+        }
+    }
+
+    @media screen and (max-width: $mediumScreen) {
+
+        .row {
+            display: block;
+        }
 
         article {
-            flex: 1;
 
             &:first-child {
-                padding-right: $sectionPadding / 2;
+                padding-right: 0;
             }
 
             &:last-child {
-                padding-left: $sectionPadding / 2;
+                padding-left: 0;
+                margin-top: 3rem;
             }
         }
     }
