@@ -1,5 +1,10 @@
 import { shallowMount } from '@vue/test-utils';
 import ContactForm from '@/components/Contact/ContactForm.vue';
+import flushPromises from "flush-promises";
+
+const axios = require('axios');
+const MockAdapter = require('axios-mock-adapter');
+const axiosMock = new MockAdapter(axios);
 
 const invalidFields = [
     {description: 'empty name', field: 'name', value: '', error: 'Name is required.'},
@@ -90,13 +95,13 @@ describe('ContactForm.vue', () => {
         });
     });
 
-    it('it validates the form when the user clicks submit', () => {
+    it('validates the form when the user clicks submit', () => {
 
         const wrapper = shallowMount(ContactForm);
 
-        const invalidName = invalidFields.filter((validFieldDataset) => validFieldDataset.field === 'name')[0];
-        const invalidEmail = invalidFields.filter((validFieldDataset) => validFieldDataset.field === 'email')[0];
-        const invalidMessage = invalidFields.filter((validFieldDataset) => validFieldDataset.field === 'message')[0];
+        const invalidName = invalidFields.filter((dataset) => dataset.field === 'name')[0];
+        const invalidEmail = invalidFields.filter((dataset) => dataset.field === 'email')[0];
+        const invalidMessage = invalidFields.filter((dataset) =>dataset.field === 'message')[0];
 
         wrapper.find('input[name="name"]').setValue(invalidName.value);
         wrapper.find('input[name="email"]').setValue(invalidEmail.value);
@@ -107,6 +112,27 @@ describe('ContactForm.vue', () => {
         expect(wrapper.find('input[name="name"]').classes()).toContain('error');
         expect(wrapper.find('input[name="email"]').classes()).toContain('error');
         expect(wrapper.find('textarea[name="message"]').classes()).toContain('error');
+    });
+
+    it('posts to the app root when the user clicks submit with valid data', async () => {
+
+        axiosMock.onPost('/').replyOnce(200);
+        const wrapper = shallowMount(ContactForm);
+
+        const validName = validFields.filter((dataset) => dataset.field === 'name')[0];
+        const validEmail = validFields.filter((dataset) => dataset.field === 'email')[0];
+        const validMessage = validFields.filter((dataset) => dataset.field === 'message')[0];
+
+        wrapper.find('input[name="name"]').setValue(validName.value);
+        wrapper.find('input[name="email"]').setValue(validEmail.value);
+        wrapper.find('textarea[name="message"]').setValue(validMessage.value);
+
+        wrapper.find('button').trigger('click');
+        await flushPromises();
+
+        expect(axiosMock.history.post.length).toBe(1);
+        expect(axiosMock.history.post[0].data)
+            .toBe(JSON.stringify({ name: validName, email: validEmail, message: validMessage }));
     });
 
 });
