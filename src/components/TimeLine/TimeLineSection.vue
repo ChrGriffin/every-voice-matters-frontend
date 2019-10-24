@@ -30,7 +30,7 @@
 
     .row {
         margin: 0 auto;
-        max-width: 120rem;
+        max-width: $displayWidth;
     }
 
     h2 {

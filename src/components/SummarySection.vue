@@ -38,7 +38,7 @@
     .row {
         margin: 0 auto;
         display: flex;
-        max-width: 80rem;
+        max-width: $textWidth;
         align-items: center;
         justify-content: center;
 

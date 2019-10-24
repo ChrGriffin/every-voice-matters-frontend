@@ -29,14 +29,14 @@
 
     footer {
         background: black;
-        padding: 1rem 0;
+        padding: 1rem;
         position: absolute;
         bottom: 0;
         left: 0;
         width: 100%;
 
         .row {
-            max-width: 80rem;
+            max-width: $textWidth;
             margin: 0 auto;
             display: flex;
         }

@@ -1,7 +1,9 @@
 <template>
     <section id="community-art">
         <h2>Community Art</h2>
-        <community-art-grid />
+        <div class="row">
+            <community-art-grid />
+        </div>
     </section>
 </template>
 
@@ -23,6 +25,13 @@
 </script>
 
 <style lang="scss" scoped>
+    @import './../../assets/scss/variables';
+
+    .row {
+        margin: 0 auto;
+        max-width: $displayWidth;
+    }
+
     section {
         position: relative;
         background-image: url('./../../assets/images/triangles.jpg');

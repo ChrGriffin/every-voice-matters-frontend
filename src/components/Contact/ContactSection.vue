@@ -22,7 +22,7 @@
 
     form {
         text-align: left;
-        max-width: 50rem;
+        max-width: $formWidth;
         margin: 0 auto;
     }
 </style>

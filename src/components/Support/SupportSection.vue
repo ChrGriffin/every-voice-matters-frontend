@@ -29,7 +29,7 @@
     @import './../../assets/scss/variables';
 
     .row {
-        max-width: 80rem;
+        max-width: $textWidth;
         margin: 0 auto;
         display: flex;
 
