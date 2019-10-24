@@ -1,6 +1,12 @@
 <template>
     <div id="app">
-        <router-view />
+        <transition name="fade"
+                    mode="out-in"
+                    @beforeLeave="beforeLeave"
+                    @enter="enter"
+                    @afterEnter="afterEnter">
+            <router-view />
+        </transition>
         <site-footer />
     </div>
 </template>
@@ -15,6 +21,25 @@
     })
 
     export default class App extends Vue {
+        prevHeight: null|string = '0';
+
+        public beforeLeave(element: HTMLElement): void {
+            this.prevHeight = getComputedStyle(element).height;
+        }
+
+        public enter(element: HTMLElement): void {
+            const { height } = getComputedStyle(element);
+
+            element.style.height = this.prevHeight;
+
+            setTimeout(() => {
+                element.style.height = height;
+            });
+        }
+
+        public afterEnter(element: HTMLElement): void {
+            element.style.height = 'auto';
+        }
     }
 </script>
 
@@ -107,5 +132,18 @@
     section .timeline {
         padding-left: $sectionPadding;
         padding-right: $sectionPadding;
+    }
+
+    .fade-enter-active,
+    .fade-leave-active {
+        transition-duration: 0.3s;
+        transition-property: height, opacity;
+        transition-timing-function: ease;
+        overflow: hidden;
+    }
+
+    .fade-enter,
+    .fade-leave-active {
+        opacity: 0
     }
 </style>
