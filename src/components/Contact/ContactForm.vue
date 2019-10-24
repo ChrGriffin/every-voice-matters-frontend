@@ -151,7 +151,19 @@
             }
 
             this.loading = true;
-            axios.post('/', {name: this.name, email: this.email, message: this.message})
+
+            axios.post(
+                '/',
+                this.encode({
+                    'form-name': 'submit-new',
+                    name: this.name,
+                    email: this.email,
+                    message: this.message
+                }),
+                {
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                }
+            )
                 .then(() => {
                     this.name = '';
                     this.email = '';
@@ -178,6 +190,14 @@
             if(index > -1) {
                 this.invalidFields.splice(index, 1);
             }
+        }
+
+        private encode(data: any) {
+            return Object.keys(data)
+                .map(
+                    key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+                )
+                .join('&');
         }
     }
 </script>
