@@ -28,7 +28,7 @@
     @import './../assets/scss/variables';
 
     footer {
-        background: black;
+        background: $black;
         padding: 1rem;
         position: absolute;
         bottom: 0;
@@ -54,7 +54,7 @@
                 padding-bottom: 0;
 
                 a {
-                    font-family: 'big-noodle-titling-oblique', sans-serif;
+                    font-family: $titleFont;
                     color: $white;
                     text-decoration: none;
                     margin: 0 1rem;
@@ -79,7 +79,7 @@
             flex: 1;
             text-align: right;
             color: $white;
-            font-family: 'big-noodle-titling-oblique', sans-serif;
+            font-family: $titleFont, sans-serif;
             font-size: 1.6rem;
 
             img {

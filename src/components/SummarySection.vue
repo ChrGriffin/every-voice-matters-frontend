@@ -61,7 +61,7 @@
         font-size: 1.2rem;
 
         &:first-child {
-            font-family: 'big-noodle-titling-oblique', sans-serif;
+            font-family: $titleFont;
             font-size: 3rem;
             margin-bottom: 1.5rem;
         }

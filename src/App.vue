@@ -80,7 +80,7 @@
     }
 
     h1, h2 {
-        font-family: 'big-noodle-titling-oblique', sans-serif;
+        font-family: $titleFont;
     }
 
     h2 {
@@ -112,8 +112,8 @@
     }
 
     button {
-        font-family: 'big-noodle-titling-oblique', sans-serif;
-        background-color: black;
+        font-family: $titleFont;
+        background-color: $black;
         color: $white;
         border: none;
         padding: 0.75rem 1rem;

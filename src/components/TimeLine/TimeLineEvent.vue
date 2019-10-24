@@ -180,10 +180,10 @@
                 margin-top: 1rem;
                 font-size: 0.9rem;
                 font-style: italic;
-                color: black;
+                color: $black;
 
                 &:hover, &:active {
-                    color: black;
+                    color: $black;
                 }
 
                 &:not(:last-of-type) {

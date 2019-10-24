@@ -23,7 +23,7 @@
     @import './../assets/scss/variables';
 
     nav {
-        background: black;
+        background: $black;
         padding: 1rem 0;
         position: fixed;
         top: 0;
@@ -49,7 +49,7 @@
 
                 a {
                     color: $white;
-                    font-family: 'big-noodle-titling-oblique', sans-serif;
+                    font-family: $titleFont;
                     text-decoration: none;
                     margin: 0 2rem;
                     font-size: 1.6rem;

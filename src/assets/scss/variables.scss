@@ -8,8 +8,20 @@ $black: #000000;
 
 $backgroundColor: $offWhite;
 
+// Fonts
+$titleFont: 'big-noodle-titling-oblique', sans-serif;
+
 // Spacing
 $sectionPadding: 2rem;
+
+// Media Queries
+$smallScreen: 40.0625rem;
+$mediumScreen: 62.9375rem;
+
+// Container Widths
+$formWidth: 50rem;
+$textWidth: 80rem;
+$displayWidth: 120rem;
 
 // Timeline
 $timelineWidth: 8px;
@@ -22,12 +34,3 @@ $timelineFadeHeight: 10px;
 $timelineGradientHeight: 80%;
 
 $timelineSmallScreenRightOffset: 10px;
-
-// Media Queries
-$smallScreen: 40.0625rem;
-$mediumScreen: 62.9375rem;
-
-// Container Widths
-$formWidth: 50rem;
-$textWidth: 80rem;
-$displayWidth: 120rem;

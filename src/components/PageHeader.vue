@@ -18,7 +18,7 @@
 
     header {
         padding: 5rem 0 6rem;
-        background: black;
+        background: $black;
     }
 
     h1 {
