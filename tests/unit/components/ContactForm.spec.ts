@@ -1,9 +1,9 @@
-import { shallowMount } from '@vue/test-utils';
+import {shallowMount, Wrapper} from '@vue/test-utils';
 import ContactForm from '@/components/Contact/ContactForm.vue';
-import flushPromises from "flush-promises";
+import flushPromises from 'flush-promises';
+import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
 
-const axios = require('axios');
-const MockAdapter = require('axios-mock-adapter');
 const axiosMock = new MockAdapter(axios);
 
 const invalidFields = [
@@ -19,7 +19,23 @@ const validFields = [
     {description: 'valid message', field: 'message', value: 'Wind\'s howling...'},
 ];
 
+function enterFormInfo(wrapper: Wrapper<any>, datasets: any[]) {
+    const name = datasets.filter((dataset) => dataset.field === 'name')[0].value;
+    const email = datasets.filter((dataset) => dataset.field === 'email')[0].value;
+    const message = datasets.filter((dataset) => dataset.field === 'message')[0].value;
+
+    wrapper.find('input[name="name"]').setValue(name);
+    wrapper.find('input[name="email"]').setValue(email);
+    wrapper.find('textarea[name="message"]').setValue(message);
+
+    return {name, email, message};
+}
+
 describe('ContactForm.vue', () => {
+
+    beforeEach(() => {
+        axiosMock.reset();
+    });
 
     it('displays a contact form', () => {
 
@@ -99,14 +115,7 @@ describe('ContactForm.vue', () => {
 
         const wrapper = shallowMount(ContactForm);
 
-        const invalidName = invalidFields.filter((dataset) => dataset.field === 'name')[0];
-        const invalidEmail = invalidFields.filter((dataset) => dataset.field === 'email')[0];
-        const invalidMessage = invalidFields.filter((dataset) =>dataset.field === 'message')[0];
-
-        wrapper.find('input[name="name"]').setValue(invalidName.value);
-        wrapper.find('input[name="email"]').setValue(invalidEmail.value);
-        wrapper.find('textarea[name="message"]').setValue(invalidMessage.value);
-
+        enterFormInfo(wrapper, invalidFields);
         wrapper.find('button').trigger('click');
 
         expect(wrapper.find('input[name="name"]').classes()).toContain('error');
@@ -119,20 +128,80 @@ describe('ContactForm.vue', () => {
         axiosMock.onPost('/').replyOnce(200);
         const wrapper = shallowMount(ContactForm);
 
-        const validName = validFields.filter((dataset) => dataset.field === 'name')[0];
-        const validEmail = validFields.filter((dataset) => dataset.field === 'email')[0];
-        const validMessage = validFields.filter((dataset) => dataset.field === 'message')[0];
-
-        wrapper.find('input[name="name"]').setValue(validName.value);
-        wrapper.find('input[name="email"]').setValue(validEmail.value);
-        wrapper.find('textarea[name="message"]').setValue(validMessage.value);
-
+        const { name, email, message } = enterFormInfo(wrapper, validFields);
         wrapper.find('button').trigger('click');
         await flushPromises();
 
         expect(axiosMock.history.post.length).toBe(1);
         expect(axiosMock.history.post[0].data)
-            .toBe(JSON.stringify({ name: validName, email: validEmail, message: validMessage }));
+            .toBe(JSON.stringify({ name, email, message }));
     });
 
+    it('displays a loading indicator instead of the form while the form is submitting', async () => {
+        axiosMock.onPost('/').replyOnce(200);
+        const wrapper = shallowMount(ContactForm);
+
+        enterFormInfo(wrapper, validFields);
+        wrapper.find('button').trigger('click');
+
+        expect(wrapper.find('form').element).toBeFalsy();
+        expect(wrapper.find('.loading').element).toBeTruthy();
+
+        await flushPromises();
+
+        expect(wrapper.find('form').element).toBeTruthy();
+        expect(wrapper.find('.loading').element).toBeFalsy();
+    });
+
+    it('displays a success message if the form successfully submitted', async () => {
+        axiosMock.onPost('/').replyOnce(200);
+        const wrapper = shallowMount(ContactForm);
+
+        enterFormInfo(wrapper, validFields);
+        wrapper.find('button').trigger('click');
+        await flushPromises();
+
+        const messageElement = wrapper.find('.message.success');
+        expect(messageElement.element).toBeTruthy();
+        expect(messageElement.html()).toContain('Your message has been successfully submitted.');
+    });
+
+    it('displays an error message if the form cannot submit', async () => {
+        axiosMock.onPost('/').replyOnce(500);
+        const wrapper = shallowMount(ContactForm);
+
+        enterFormInfo(wrapper, validFields);
+        wrapper.find('button').trigger('click');
+        await flushPromises();
+
+        const messageElement = wrapper.find('.message.error');
+        expect(messageElement.element).toBeTruthy();
+        expect(messageElement.html()).toContain('There was a problem submitting your message. Please try again.');
+    });
+
+    it('clears the form fields after a successful submission', async () => {
+        axiosMock.onPost('/').replyOnce(200);
+        const wrapper = shallowMount(ContactForm);
+
+        enterFormInfo(wrapper, validFields);
+        wrapper.find('button').trigger('click');
+        await flushPromises();
+
+        expect(wrapper.vm.$data.name).toEqual('');
+        expect(wrapper.vm.$data.email).toEqual('');
+        expect(wrapper.vm.$data.message).toEqual('');
+    });
+
+    it('does not clear the form fields after a failed submission', async () => {
+        axiosMock.onPost('/').replyOnce(500);
+        const wrapper = shallowMount(ContactForm);
+
+        const { name, email, message } = enterFormInfo(wrapper, validFields);
+        wrapper.find('button').trigger('click');
+        await flushPromises();
+
+        expect(wrapper.vm.$data.name).toEqual(name);
+        expect(wrapper.vm.$data.email).toEqual(email);
+        expect(wrapper.vm.$data.message).toEqual(message);
+    });
 });
