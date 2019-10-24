@@ -7,7 +7,7 @@
         </div>
     </div>
 
-    <form v-else method="post" name="submit-new" netlify>
+    <form v-else method="post" name="contact" netlify>
         <div v-if="shouldDisplaySubmitMessage" :class="submitMessageClass">{{ submitMessage }}</div>
         <div>
             <div class="input-wrapper">
