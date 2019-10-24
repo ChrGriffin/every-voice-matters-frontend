@@ -75,4 +75,23 @@ describe('ContactForm.vue', () => {
         });
     });
 
+    it('it validates the form when the user clicks submit', () => {
+
+        const wrapper = shallowMount(ContactForm);
+
+        const invalidName = invalidFields.filter((validFieldDataset) => validFieldDataset.field === 'name')[0];
+        const invalidEmail = invalidFields.filter((validFieldDataset) => validFieldDataset.field === 'email')[0];
+        const invalidMessage = invalidFields.filter((validFieldDataset) => validFieldDataset.field === 'message')[0];
+
+        wrapper.find('input[name="name"]').setValue(invalidName.value);
+        wrapper.find('input[name="email"]').setValue(invalidEmail.value);
+        wrapper.find('textarea[name="message"]').setValue(invalidMessage.value);
+
+        wrapper.find('button').trigger('click');
+
+        expect(wrapper.find('input[name="name"]').classes()).toContain('error');
+        expect(wrapper.find('input[name="email"]').classes()).toContain('error');
+        expect(wrapper.find('textarea[name="message"]').classes()).toContain('error');
+    });
+
 });

@@ -6,7 +6,7 @@
                    id="contact-name"
                    name="name"
                    v-on:blur="validateName"
-                   :class="(!nameIsValid ? '' : 'error')"
+                   :class="(nameIsValid ? '' : 'error')"
                    v-model="name"
                    required />
         </div>
@@ -17,7 +17,7 @@
                    id="contact-email"
                    name="email"
                    v-on:blur="validateEmail"
-                   :class="(!emailIsValid ? '' : 'error')"
+                   :class="(emailIsValid ? '' : 'error')"
                    v-model="email"
                    required />
         </div>
@@ -27,7 +27,7 @@
                   name="message"
                   rows="6"
                   v-on:blur="validateMessage"
-                  :class="(!messageIsValid ? '' : 'error')"
+                  :class="(messageIsValid ? '' : 'error')"
                   v-model="message"
                   required></textarea>
 
@@ -49,15 +49,15 @@
         public invalidFields: string[] = [];
 
         get nameIsValid(): boolean {
-            return this.invalidFields.includes('name');
+            return !this.invalidFields.includes('name');
         }
 
         get emailIsValid(): boolean {
-            return this.invalidFields.includes('email');
+            return !this.invalidFields.includes('email');
         }
 
         get messageIsValid(): boolean {
-            return this.invalidFields.includes('message');
+            return !this.invalidFields.includes('message');
         }
 
         public validateName(): boolean {
@@ -92,7 +92,13 @@
         }
 
         public postMessage(): void {
+            const nameValid = this.validateName();
+            const emailValid = this.validateEmail();
+            const messageValid = this.validateMessage();
 
+            if(!nameValid || !emailValid || !messageValid) {
+                return;
+            }
         }
 
         private pushInvalidField(field: string): void {
