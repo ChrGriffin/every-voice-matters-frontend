@@ -9,6 +9,7 @@
                    :class="(nameIsValid ? '' : 'error')"
                    v-model="name"
                    required />
+            <div class="error-message" v-if="!nameIsValid">{{ errorMessages.name }}</div>
         </div>
 
         <div class="input-wrapper">
@@ -20,6 +21,7 @@
                    :class="(emailIsValid ? '' : 'error')"
                    v-model="email"
                    required />
+            <div class="error-message" v-if="!emailIsValid">{{ errorMessages.email }}</div>
         </div>
 
         <label for="contact-message" class="required">Message</label>
@@ -29,7 +31,9 @@
                   v-on:blur="validateMessage"
                   :class="(messageIsValid ? '' : 'error')"
                   v-model="message"
-                  required></textarea>
+                  required>
+        </textarea>
+        <div class="error-message" v-if="!messageIsValid">{{ errorMessages.message }}</div>
 
         <div class="button-wrapper">
             <button type="button" v-on:click="postMessage">Send Message</button>
@@ -40,6 +44,12 @@
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
 
+    interface errorMessages {
+        name: null|string;
+        email: null|string;
+        message: null|string;
+    }
+
     @Component({})
     export default class ContactForm extends Vue {
 
@@ -47,6 +57,11 @@
         public email: string = '';
         public message: string = '';
         public invalidFields: string[] = [];
+        public errorMessages: errorMessages = {
+            name: null,
+            email: null,
+            message: null
+        };
 
         get nameIsValid(): boolean {
             return !this.invalidFields.includes('name');
@@ -63,20 +78,30 @@
         public validateName(): boolean {
             if(this.name.length <= 0) {
                 this.pushInvalidField('name');
+                this.errorMessages.name = 'Name is required.';
                 return false;
             }
 
             this.removeInvalidField('name');
+            this.errorMessages.name = null;
             return true;
         }
 
         public validateEmail(): boolean {
+            if(this.email.length <= 0) {
+                this.pushInvalidField('email');
+                this.errorMessages.email = 'Email is required.';
+                return false;
+            }
+
             if(! /\S+@\S+\.\S+/.test(this.email)) {
                 this.pushInvalidField('email');
+                this.errorMessages.email = 'Email is invalid.';
                 return false;
             }
 
             this.removeInvalidField('email');
+            this.errorMessages.email = null;
             return true;
         }
 
@@ -84,10 +109,12 @@
 
             if(this.message.length <= 0) {
                 this.pushInvalidField('message');
+                this.errorMessages.message = 'Message is required.';
                 return false;
             }
 
             this.removeInvalidField('message');
+            this.errorMessages.message = null;
             return true;
         }
 
@@ -162,5 +189,17 @@
 
     .button-wrapper {
         text-align: right;
+    }
+
+    .error-message {
+        background-color: $red;
+        color: $white;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+        margin-top: -1rem;
+    }
+
+    textarea + .error-message {
+        margin-top: calc(-1rem - 3px);
     }
 </style>

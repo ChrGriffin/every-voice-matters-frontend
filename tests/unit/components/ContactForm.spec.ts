@@ -75,6 +75,21 @@ describe('ContactForm.vue', () => {
         });
     });
 
+    invalidFields.forEach((dataset) => {
+
+        it(`displays a relevant error for a field on blur with dataset: ${dataset.description}`, () => {
+
+            const wrapper = shallowMount(ContactForm);
+            const formInput = wrapper.find(`[name="${dataset.field}"]`);
+            expect(wrapper.find('.error-message').element).toBeFalsy();
+
+            formInput.setValue(dataset.value);
+            formInput.trigger('blur');
+            expect(wrapper.find('.error-message').element).toBeTruthy();
+            expect(wrapper.find('.error-message').html()).toContain(dataset.error);
+        });
+    });
+
     it('it validates the form when the user clicks submit', () => {
 
         const wrapper = shallowMount(ContactForm);
