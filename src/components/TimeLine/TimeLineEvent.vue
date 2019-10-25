@@ -31,10 +31,12 @@
 
         @Watch('hover')
         onHoverChanged(val: boolean, oldVal: boolean) {
+            console.log('hover changed!');
             if (!this.condensed) {
                 return;
             }
 
+            console.log(this.getPotentialContentHeight());
             this.contentHeight = val ? this.getPotentialContentHeight().toString() + 'px' : '0';
         }
 
@@ -65,11 +67,6 @@
                 'December',
             ];
             return `${months[this.date.getMonth()]} ${this.date.getDate()}, ${this.date.getUTCFullYear()}`;
-        }
-
-        private easeInOutQuart(t: number, b: number, c: number, d: number): number {
-            if ((t /= d / 2) < 1) return c / 2 * t * t * t * t + b;
-            return -c / 2 * ((t -= 2) * t * t * t - 2) + b;
         }
 
         private getPotentialContentHeight(): number {
