@@ -2,7 +2,7 @@
     <div :class="className" @mouseover="hover = true" @mouseleave="hover = false">
         <span class="date">{{ humanReadableDate }}</span>
         <h3>{{ name }}</h3>
-        <div class="content">
+        <div class="content" :style="(condensed ? `height: ${contentHeight};` : '')">
             <p>{{ text }}</p>
             <a v-for="url in urls" :href="url.value" target="_blank">{{ url.label }}</a>
             <img v-for="image in images" :src="image.value" :alt="image.label" />
@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-    import { Component, Prop, Vue } from 'vue-property-decorator';
+    import {Component, Prop, Vue, Watch} from 'vue-property-decorator';
     import { Direction } from '../types';
     import { EventAttachment } from '@/repositories/types';
 
@@ -28,16 +28,23 @@
         @Prop() public images!: EventAttachment[];
 
         public hover: boolean = false;
+        public contentHeight: string = '0';
+
+        @Watch('hover')
+        onHoverChanged(val: boolean, oldVal: boolean) {
+            if(val) {
+                this.contentHeight = '200px';
+            }
+            else {
+                this.contentHeight = '0';
+            }
+        }
 
         get className(): string {
             let classname = 'event ';
 
             if (this.condensed) {
                 classname += 'condensed ';
-            }
-
-            if (this.hover) {
-                classname += 'expanded ';
             }
 
             classname += this.direction;
@@ -165,7 +172,11 @@
             }
 
             .content {
-                display: none;
+                overflow: hidden;
+
+                p {
+                    margin-top: 1rem;
+                }
             }
         }
 

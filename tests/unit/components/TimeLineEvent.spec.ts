@@ -189,10 +189,12 @@ describe('TimeLineEvent.vue', () => {
         });
 
         const event = wrapper.find('.event');
+        const eventContent = wrapper.find('.event .content');
+
         event.trigger('mouseover');
-        expect(event.classes().includes('expanded')).toBe(true);
+        expect(eventContent.element.style.height === '0px').toBe(false);
 
         event.trigger('mouseleave');
-        expect(event.classes().includes('expanded')).toBe(false);
+        expect(eventContent.element.style.height).toBe('0px');
     });
 });
