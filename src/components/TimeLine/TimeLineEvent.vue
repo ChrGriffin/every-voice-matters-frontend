@@ -1,11 +1,10 @@
 <template>
-    <div :class="className" @mouseover="hover = true" @mouseleave="hover = false">
+    <div :class="className" @mouseover="hover = true" @mouseleave="hover = false" ref="event">
         <span class="date">{{ humanReadableDate }}</span>
         <h3>{{ name }}</h3>
         <div class="content" :style="(condensed ? `height: ${contentHeight};` : '')">
             <p>{{ text }}</p>
             <a v-for="url in urls" :href="url.value" target="_blank">{{ url.label }}</a>
-            <img v-for="image in images" :src="image.value" :alt="image.label" />
         </div>
         <img v-if="condensed === false && icon !== null" class="icon" :src="icon" />
     </div>
@@ -32,12 +31,11 @@
 
         @Watch('hover')
         onHoverChanged(val: boolean, oldVal: boolean) {
-            if(val) {
-                this.contentHeight = '200px';
+            if (!this.condensed) {
+                return;
             }
-            else {
-                this.contentHeight = '0';
-            }
+
+            this.contentHeight = val ? this.getPotentialContentHeight().toString() + 'px' : '0';
         }
 
         get className(): string {
@@ -67,6 +65,30 @@
                 'December',
             ];
             return `${months[this.date.getMonth()]} ${this.date.getDate()}, ${this.date.getUTCFullYear()}`;
+        }
+
+        private easeInOutQuart(t: number, b: number, c: number, d: number): number {
+            if ((t /= d / 2) < 1) return c / 2 * t * t * t * t + b;
+            return -c / 2 * ((t -= 2) * t * t * t - 2) + b;
+        }
+
+        private getPotentialContentHeight(): number {
+
+            // @ts-ignore
+            const clone = this.$refs.event.cloneNode(true);
+            clone.className = clone.className + ' getHeightClone';
+
+            const body = document.querySelector('.timeline');
+            if(body === null) {
+                return 0;
+            }
+            body.appendChild(clone);
+
+            clone.querySelector('.content').style.height = 'auto';
+            const height = parseInt(clone.querySelector('.content').offsetHeight);
+            body.removeChild(clone);
+
+            return height;
         }
     }
 </script>
@@ -173,9 +195,16 @@
 
             .content {
                 overflow: hidden;
+                height: 0;
+                transition: height 0.25s ease;
 
                 p {
                     margin-top: 1rem;
+                    font-size: 0.9rem;
+                }
+
+                a {
+                    font-size: 0.8rem;
                 }
             }
         }
@@ -268,6 +297,10 @@
 
                 &.left, &.right {
                     margin-left: 0;
+                }
+
+                .content {
+                    height: auto !important;
                 }
             }
 
