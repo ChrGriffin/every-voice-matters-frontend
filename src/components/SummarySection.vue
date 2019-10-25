@@ -64,6 +64,7 @@
             font-family: $titleFont;
             font-size: 3rem;
             margin-bottom: 1.5rem;
+            line-height: 1;
         }
 
         a {
@@ -103,5 +104,12 @@
                max-width: 30rem;
            }
        }
+    }
+
+    @media screen and (max-width: $smallScreen) {
+
+        p:first-child {
+            font-size: 2.4rem;
+        }
     }
 </style>

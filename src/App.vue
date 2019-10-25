@@ -146,4 +146,11 @@
     .fade-leave-active {
         opacity: 0
     }
+
+    @media screen and (max-width: $smallScreen) {
+
+        h2 {
+            font-size: 2.6rem;
+        }
+    }
 </style>

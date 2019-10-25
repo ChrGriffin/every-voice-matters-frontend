@@ -56,4 +56,15 @@
             }
         }
     }
+
+    @media screen and (max-width: $smallScreen) {
+
+        header {
+            padding: 6rem 0 3rem;
+        }
+
+        h1 {
+            font-size: 6rem;
+        }
+    }
 </style>

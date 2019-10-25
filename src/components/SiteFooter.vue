@@ -88,4 +88,23 @@
             }
         }
     }
+
+    @media screen and (max-width: $smallScreen) {
+
+        footer {
+
+            ul li a {
+                margin: 0 0.5rem;
+                font-size: 1.4rem;
+            }
+
+            .powered {
+                font-size: 1.4rem;
+            }
+
+            img {
+                height: 1.4rem;
+            }
+        }
+    }
 </style>

@@ -2,9 +2,9 @@
     <scrollactive :offset="60">
         <ul>
             <li><a href="#summary" class="scrollactive-item">Summary</a></li>
-            <li><a href="#timeline" class="scrollactive-item">Timeline of Events</a></li>
+            <li><a href="#timeline" class="scrollactive-item">Timeline<span> of Events</span></a></li>
             <li><a href="#support" class="scrollactive-item">Support</a></li>
-            <li><a href="#community-art" class="scrollactive-item">Community Art</a></li>
+            <li><a href="#community-art" class="scrollactive-item"><span>Community </span>Art</a></li>
             <li></li>
         </ul>
     </scrollactive>
@@ -62,6 +62,18 @@
                         color: $yellow;
                     }
                 }
+            }
+        }
+    }
+
+    @media screen and (max-width: $smallScreen) {
+
+        nav ul li a {
+            margin: 0 0.5rem;
+            font-size: 1.4rem;
+
+            span {
+                display: none;
             }
         }
     }
