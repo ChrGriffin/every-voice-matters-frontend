@@ -6,7 +6,7 @@
             <p>{{ text }}</p>
             <a v-for="url in urls" :href="url.value" target="_blank">{{ url.label }}</a>
         </div>
-        <img v-if="condensed === false && icon !== null" class="icon" :src="icon" />
+        <img v-if="condensed === false && icon !== null" class="icon" :src="icon" :alt="'Icon for event: ' + name" />
     </div>
 </template>
 
