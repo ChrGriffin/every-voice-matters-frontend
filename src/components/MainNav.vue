@@ -5,7 +5,6 @@
             <li><a href="#timeline" class="scrollactive-item">Timeline<span> of Events</span></a></li>
             <li><a href="#support" class="scrollactive-item">Support</a></li>
             <li><a href="#community-art" class="scrollactive-item"><span>Community </span>Art</a></li>
-            <li></li>
         </ul>
     </scrollactive>
 </template>
@@ -34,6 +33,7 @@
         ul {
             list-style: none;
             text-align: center;
+            padding-left: 0;
 
             li {
                 display: inline-block;
