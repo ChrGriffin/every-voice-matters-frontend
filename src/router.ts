@@ -14,7 +14,13 @@ const appRouter = new Router({
             name: 'home',
             component: Home,
             meta: {
-                title: 'Every Voice Matters'
+                title: 'Every Voice Matters',
+                metaTags: [
+                    {
+                        name: 'description',
+                        content: 'When the chips were down and it was time to do or die, Blizzard threw away value they ever sold us on.'
+                    }
+                ]
             }
         },
         {
@@ -22,7 +28,13 @@ const appRouter = new Router({
             name: 'contact',
             component: Contact,
             meta: {
-                title: 'Contact | Every Voice Matters'
+                title: 'Contact | Every Voice Matters',
+                metaTags: [
+                    {
+                        name: 'description',
+                        content: 'Get in touch with the maintainers of Every Voice Matters.'
+                    }
+                ]
             }
         },
     ],
