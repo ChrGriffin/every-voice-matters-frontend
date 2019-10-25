@@ -26,7 +26,7 @@ const appRouter = new Router({
                     },
                     {
                         property: 'og:description',
-                        content: 'When the chips were down and it was time to do or die, Blizzard threw away every value they ever sold us on.',
+                        content: 'Blizzard threw away every value they ever sold us on.',
                     },
                     {
                         property: 'og:image',
