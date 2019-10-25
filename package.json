@@ -19,6 +19,7 @@
     "spinkit": "^1.2.5",
     "ts-mock-imports": "^1.2.6",
     "vue": "^2.6.10",
+    "vue-analytics": "^5.17.2",
     "vue-class-component": "^7.0.2",
     "vue-masonry": "^0.11.8",
     "vue-property-decorator": "^8.1.0",
