@@ -172,4 +172,27 @@ describe('TimeLineEvent.vue', () => {
         expect(uncondensedWrapper.find('.icon').element.getAttribute('src'))
             .toBe('/images/icon.svg');
     });
+
+    it('expands a condensed event when the user hovers over it', () => {
+
+        const wrapper = shallowMount(TimeLineEvent, {
+            propsData: {
+                name: props.name,
+                text: props.text,
+                condensed: true,
+                direction: props.direction,
+                date: props.date,
+                icon: props.icon,
+                urls: props.urls,
+                images: props.images,
+            },
+        });
+
+        const event = wrapper.find('.event');
+        event.trigger('mouseover');
+        expect(event.classes().includes('expanded')).toBe(true);
+
+        event.trigger('mouseleave');
+        expect(event.classes().includes('expanded')).toBe(false);
+    });
 });

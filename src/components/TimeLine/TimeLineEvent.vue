@@ -1,5 +1,5 @@
 <template>
-    <div :class="className">
+    <div :class="className" @mouseover="hover = true" @mouseleave="hover = false">
         <span class="date">{{ humanReadableDate }}</span>
         <h3>{{ name }}</h3>
         <div class="content">
@@ -27,10 +27,17 @@
         @Prop() public urls!: EventAttachment[];
         @Prop() public images!: EventAttachment[];
 
+        public hover: boolean = false;
+
         get className(): string {
             let classname = 'event ';
+
             if (this.condensed) {
                 classname += 'condensed ';
+            }
+
+            if (this.hover) {
+                classname += 'expanded ';
             }
 
             classname += this.direction;
