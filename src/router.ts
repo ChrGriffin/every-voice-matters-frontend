@@ -21,15 +21,15 @@ const appRouter = new Router({
                         content: 'When the chips were down and it was time to do or die, Blizzard threw away every value they ever sold us on.'
                     },
                     {
-                        name: 'og:title',
+                        property: 'og:title',
                         content: 'Every Voice Matters'
                     },
                     {
-                        name: 'og:description',
+                        property: 'og:description',
                         content: 'When the chips were down and it was time to do or die, Blizzard threw away every value they ever sold us on.',
                     },
                     {
-                        name: 'og:image',
+                        property: 'og:image',
                         content: 'https://res.cloudinary.com/dqqlm018i/image/upload/v1571972443/every_voice_matters/meiog_klminp.png'
                     }
                 ]
