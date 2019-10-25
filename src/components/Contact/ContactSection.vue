@@ -9,7 +9,7 @@
     import ContactForm from '@/components/Contact/ContactForm.vue';
 
     @Component({
-        components: { ContactForm }
+        components: { ContactForm },
     })
 
     export default class ContactSection extends Vue {

@@ -56,7 +56,7 @@
     import { Component, Vue } from 'vue-property-decorator';
     import axios from 'axios';
 
-    interface errorMessages {
+    interface ErrorMessages {
         name: null|string;
         email: null|string;
         message: null|string;
@@ -69,10 +69,10 @@
         public email: string = '';
         public message: string = '';
         public invalidFields: string[] = [];
-        public errorMessages: errorMessages = {
+        public errorMessages: ErrorMessages = {
             name: null,
             email: null,
-            message: null
+            message: null,
         };
         public loading: boolean = false;
         public successful: null|boolean = null;
@@ -99,7 +99,7 @@
         }
 
         public validateName(): boolean {
-            if(this.name.length <= 0) {
+            if (this.name.length <= 0) {
                 this.pushInvalidField('name');
                 this.errorMessages.name = 'Name is required.';
                 return false;
@@ -111,13 +111,13 @@
         }
 
         public validateEmail(): boolean {
-            if(this.email.length <= 0) {
+            if (this.email.length <= 0) {
                 this.pushInvalidField('email');
                 this.errorMessages.email = 'Email is required.';
                 return false;
             }
 
-            if(! /\S+@\S+\.\S+/.test(this.email)) {
+            if (! /\S+@\S+\.\S+/.test(this.email)) {
                 this.pushInvalidField('email');
                 this.errorMessages.email = 'Email is invalid.';
                 return false;
@@ -130,7 +130,7 @@
 
         public validateMessage(): boolean {
 
-            if(this.message.length <= 0) {
+            if (this.message.length <= 0) {
                 this.pushInvalidField('message');
                 this.errorMessages.message = 'Message is required.';
                 return false;
@@ -146,7 +146,7 @@
             const emailValid = this.validateEmail();
             const messageValid = this.validateMessage();
 
-            if(!nameValid || !emailValid || !messageValid) {
+            if (!nameValid || !emailValid || !messageValid) {
                 return;
             }
 
@@ -158,11 +158,11 @@
                     'form-name': 'submit-new',
                     name: this.name,
                     email: this.email,
-                    message: this.message
+                    message: this.message,
                 }),
                 {
-                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-                }
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                },
             )
                 .then(() => {
                     this.name = '';
@@ -180,23 +180,21 @@
         }
 
         private pushInvalidField(field: string): void {
-            if(!this.invalidFields.includes(field)) {
+            if (!this.invalidFields.includes(field)) {
                 this.invalidFields.push(field);
             }
         }
 
         private removeInvalidField(field: string): void {
             const index = this.invalidFields.indexOf(field);
-            if(index > -1) {
+            if (index > -1) {
                 this.invalidFields.splice(index, 1);
             }
         }
 
         private encode(data: any) {
             return Object.keys(data)
-                .map(
-                    key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
-                )
+                .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
                 .join('&');
         }
     }

@@ -21,7 +21,7 @@
     })
 
     export default class App extends Vue {
-        prevHeight: null|string = '0';
+        private prevHeight: null|string = '0';
 
         public beforeLeave(element: HTMLElement): void {
             this.prevHeight = getComputedStyle(element).height;

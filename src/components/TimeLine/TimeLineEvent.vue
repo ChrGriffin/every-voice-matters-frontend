@@ -30,13 +30,11 @@
         public contentHeight: string = '0';
 
         @Watch('hover')
-        onHoverChanged(val: boolean, oldVal: boolean) {
-            console.log('hover changed!');
+        public onHoverChanged(val: boolean, oldVal: boolean) {
             if (!this.condensed) {
                 return;
             }
 
-            console.log(this.getPotentialContentHeight());
             this.contentHeight = val ? this.getPotentialContentHeight().toString() + 'px' : '0';
         }
 
@@ -76,7 +74,7 @@
             clone.className = clone.className + ' getHeightClone';
 
             const body = document.querySelector('.timeline');
-            if(body === null) {
+            if (body === null) {
                 return 0;
             }
             body.appendChild(clone);

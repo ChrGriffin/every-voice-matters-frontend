@@ -18,11 +18,11 @@ const appRouter = new Router({
                 metaTags: [
                     {
                         name: 'description',
-                        content: 'When the chips were down and it was time to do or die, Blizzard threw away every value they ever sold us on.'
+                        content: 'When the chips were down and it was time to do or die, Blizzard threw away every value they ever sold us on.',
                     },
                     {
                         property: 'og:title',
-                        content: 'Every Voice Matters'
+                        content: 'Every Voice Matters',
                     },
                     {
                         property: 'og:description',
@@ -30,10 +30,10 @@ const appRouter = new Router({
                     },
                     {
                         property: 'og:image',
-                        content: 'https://res.cloudinary.com/dqqlm018i/image/upload/v1571972443/every_voice_matters/meiog_klminp.png'
-                    }
-                ]
-            }
+                        content: 'https://res.cloudinary.com/dqqlm018i/image/upload/v1571972443/every_voice_matters/meiog_klminp.png',
+                    },
+                ],
+            },
         },
         {
             path: '/contact',
@@ -44,10 +44,10 @@ const appRouter = new Router({
                 metaTags: [
                     {
                         name: 'description',
-                        content: 'Get in touch with the maintainers of Every Voice Matters.'
-                    }
-                ]
-            }
+                        content: 'Get in touch with the maintainers of Every Voice Matters.',
+                    },
+                ],
+            },
         },
     ],
 });
@@ -57,24 +57,24 @@ const appRouter = new Router({
 appRouter.beforeEach((to: any, from: any, next: any) => {
     const nearestWithTitle = to.matched.slice().reverse().find((r: any) => r.meta && r.meta.title);
     const nearestWithMeta = to.matched.slice().reverse().find((r: any) => r.meta && r.meta.metaTags);
-    if(nearestWithTitle) {
+    if (nearestWithTitle) {
         document.title = nearestWithTitle.meta.title;
     }
 
     Array.from(document.querySelectorAll('[data-vue-router-controlled]')).map((el) => {
-        if(el.parentNode !== null) {
+        if (el.parentNode !== null) {
             el.parentNode.removeChild(el);
         }
     });
 
-    if(!nearestWithMeta) {
+    if (!nearestWithMeta) {
         return next();
     }
 
     nearestWithMeta.meta.metaTags.map((tagDef: any) => {
         const tag = document.createElement('meta');
 
-        Object.keys(tagDef).forEach(key => {
+        Object.keys(tagDef).forEach((key) => {
             tag.setAttribute(key, tagDef[key]);
         });
 

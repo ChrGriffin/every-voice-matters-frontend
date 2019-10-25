@@ -11,7 +11,7 @@
     import ContactSection from '@/components/Contact/ContactSection.vue';
 
     @Component({
-        components: { PageHeader, ContactSection }
+        components: { PageHeader, ContactSection },
     })
     export default class Home extends Vue {
     }
