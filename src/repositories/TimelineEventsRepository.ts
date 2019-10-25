@@ -1,4 +1,4 @@
-import { Event, EventAttachmentType } from './types';
+import {Event, EventAttachmentType} from './types';
 
 export default class TimelineEventsRepository {
 
@@ -72,6 +72,20 @@ export default class TimelineEventsRepository {
                         type: EventAttachmentType.image,
                         value: 'https://pbs.twimg.com/media/EGYGUGcU0AEFn_p?format=png&name=small',
                         label: 'Photo of plaque outside Blizzard HQ covered up with a sheet of paper',
+                    },
+                ],
+            },
+            {
+                name: 'Mark Kern Joins #BoycottBlizzard',
+                text: 'Mark Kern, Team Lead for the original World of Warcraft, cancels his subscription in protest. In his message to Blizzard, he condemns their "fear of China", and asks them to "stand up for what is right."',
+                condensed: true,
+                time: new Date('October 8, 2019 22:25:00 EDT'),
+                icon: null,
+                attachments: [
+                    {
+                        type: EventAttachmentType.url,
+                        value: 'https://twitter.com/grummz/status/1181757457527267328?lang=en',
+                        label: 'Original Twitter Post',
                     },
                 ],
             },
@@ -161,6 +175,20 @@ export default class TimelineEventsRepository {
                 ],
             },
             {
+                name: 'Riot Games Asks Players to Not Discuss Hong Kong',
+                text: 'John Needham, Global Head of League of Legends eSports, posts an open letter asking both casters and players to not discuss sensitive or political topics such as Hong Kong on the air.',
+                condensed: true,
+                time: new Date('Oct 11, 2019 13:35:00 EDT'),
+                icon: null,
+                attachments: [
+                    {
+                        type: EventAttachmentType.url,
+                        value: 'https://twitter.com/lolesports/status/1182711322791698432',
+                        label: 'Original Twitter Post',
+                    },
+                ],
+            },
+            {
                 name: 'J. Allen Brack Responds to Controversy',
                 text: 'The president of Blizzard Entertainment posts an open letter to the Blizzard community. In it, he concedes that Blizzard may have "reacted too quickly", and reduces Blitzchung\'s suspension from 12 months to 6 months, and restores his winnings. He also reduces the casters\' suspensions to 6 months. No apology is offered to Blitzchung, the casters, or the community, and he makes it clear that streamers/competitors will continue to be banned for bringing up political topics.' ,
                 condensed: false,
@@ -175,15 +203,15 @@ export default class TimelineEventsRepository {
                 ],
             },
             {
-                name: 'Riot Games Asks Players to Not Discuss Hong Kong',
-                text: 'John Needham, Global Head of League of Legends eSports, posts an open letter asking both casters and players to not discuss sensitive or political topics such as Hong Kong on the air.',
+                name: 'Mei Statue Disappears from Blizzard Store',
+                text: 'The statue of Mei - which had been accepting preorders - was suddenly removed from the Blizzard store. Notably, when other statues were sold out, the product pages remained with a message saying they were no longer available.',
                 condensed: true,
-                time: new Date('Oct 11, 2019 13:35:00 EDT'),
+                time: new Date('Oct 11, 2019 21:06:00 EDT'),
                 icon: null,
                 attachments: [
                     {
                         type: EventAttachmentType.url,
-                        value: 'https://twitter.com/lolesports/status/1182711322791698432',
+                        value: 'https://twitter.com/Grummz/status/1182824874659610626',
                         label: 'Original Twitter Post',
                     },
                 ],
