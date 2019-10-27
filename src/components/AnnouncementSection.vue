@@ -1,9 +1,9 @@
 <template>
     <section>
-        <a href="https://www.gamersforfreedom.com/#online" target="_blank" class="content">
+        <a :href="url" target="_blank" class="content">
             <chevron-right />
             <chevron-right />
-            <h2>10/29: Online Day of Action</h2>
+            <h2>{{ text }}</h2>
             <chevron-left />
             <chevron-left />
         </a>
@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-    import { Component, Vue } from 'vue-property-decorator';
+    import { Component, Prop, Vue } from 'vue-property-decorator';
     import ChevronRight from './../assets/images/chevron-right-solid.svg?inline';
     import ChevronLeft from './../assets/images/chevron-left-solid.svg?inline';
 
@@ -19,6 +19,8 @@
         components: { ChevronRight, ChevronLeft },
     })
     export default class AnnouncementSection extends Vue {
+        @Prop() url!: string;
+        @Prop() text!: string;
     }
 </script>
 
