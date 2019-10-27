@@ -7,6 +7,12 @@
                     <li><router-link :to="{name: 'contact'}">Contact</router-link></li>
                 </ul>
             </nav>
+        </div>
+
+        <div class="row">
+            <ul class="links">
+                <li><a href="https://www.gamersforfreedom.com/" target="_blank">Gamers for Freedom</a></li>
+            </ul>
 
             <div class="powered">
                 Powered by <a href="https://vuejs.org/" target="_blank"><img :src="require('./../assets/images/vue.png')" alt="Vue.js logo" /></a>
@@ -73,17 +79,26 @@
                     margin-left: 0;
                 }
             }
+
+            &.links {
+                margin-top: 1rem;
+
+                li a {
+                    font-size: 1.2rem;
+                }
+            }
         }
 
         .powered {
+            margin-top: 1rem;
             flex: 1;
             text-align: right;
             color: $white;
             font-family: $titleFont, sans-serif;
-            font-size: 1.6rem;
+            font-size: 1.2rem;
 
             img {
-                height: 1.4rem;
+                height: 1rem;
                 margin-left: 5px;
             }
         }
