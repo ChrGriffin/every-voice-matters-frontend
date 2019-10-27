@@ -3,8 +3,10 @@
         <main-nav/>
         <site-hero/>
         <summary-section/>
+        <announcement-section />
         <time-line-section/>
         <support-section/>
+        <announcement-section />
         <community-art-section/>
     </div>
 </template>
@@ -14,12 +16,14 @@
     import MainNav from '@/components/MainNav.vue';
     import SiteHero from '@/components/SiteHero.vue';
     import SummarySection from '@/components/SummarySection.vue';
+    import AnnouncementSection from '@/components/AnnouncementSection.vue';
     import TimeLineSection from '@/components/TimeLine/TimeLineSection.vue';
     import CommunityArtSection from '@/components/CommunityArt/CommunityArtSection.vue';
     import SupportSection from '@/components/Support/SupportSection.vue';
 
     @Component({
         components: {
+            AnnouncementSection,
             MainNav,
             SiteHero,
             SummarySection,
