@@ -212,6 +212,14 @@ export default class CommunityArtRepository {
                     url: 'https://www.reddit.com/user/morgan_blorgon/',
                 },
             },
+            {
+                image: 'https://preview.redd.it/thml1354x6v31.png?width=640&crop=smart&auto=webp&s=9438704af09acf711e44191673ba88baafa7b8ea',
+                description: 'A sketch of Mei holding an umbrella and wearing a gas mask',
+                author: {
+                    name: 'antediluvianevil',
+                    url: 'https://www.reddit.com/user/antediluvianevil/',
+                },
+            },
         ];
     }
 }

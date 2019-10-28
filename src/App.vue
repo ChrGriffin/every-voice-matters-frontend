@@ -61,7 +61,7 @@
         position: relative;
         background-color: $offWhite;
         min-height: 100vh;
-        padding-bottom: 3rem;
+        padding-bottom: 4rem;
     }
 
     #app {
