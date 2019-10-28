@@ -76,6 +76,25 @@ export default class TimelineEventsRepository {
                 ],
             },
             {
+                name: 'Collegiate Hearthstone Competitors Protest Blizzard',
+                text: 'Near the end of a stream of an American Collegiate Hearthstone Championship match, the players on the American University team hold up a sign that reads, "Free Hong Kong, Boycott Blizz". The camera quickly cuts away.',
+                condensed: true,
+                time: new Date('October 8, 2019 21:28:00 EDT'),
+                icon: null,
+                attachments: [
+                    {
+                        type: EventAttachmentType.url,
+                        value: 'https://youtu.be/u_mmWMN6K40?t=3094',
+                        label: 'YouTube Video',
+                    },
+                    {
+                        type: EventAttachmentType.url,
+                        value: 'https://www.pcgamer.com/collegiate-hearthstone-championship-match-ends-with-call-to-free-hong-kong-boycott-blizz/',
+                        label: 'PCGamer Report',
+                    },
+                ],
+            },
+            {
                 name: 'Mark Kern Joins #BoycottBlizzard',
                 text: 'Mark Kern, Team Lead for the original World of Warcraft, cancels his subscription in protest. In his message to Blizzard, he condemns their "fear of China", and asks them to "stand up for what is right."',
                 condensed: true,
@@ -175,6 +194,34 @@ export default class TimelineEventsRepository {
                 ],
             },
             {
+                name: 'American University Collegiate Hearthstone Team Forfeits in Protest',
+                text: 'The American University Hearthstone Collegiate team, who earlier had held up a sign during their match that read "Free Hong Kong, Boycott Blizzard", remain unpunished by Blizzard. They forfeit their next match and the tournament in protest, calling it "hypocritical" to punish Blitzchung and not them.',
+                condensed: true,
+                time: new Date('Oct 10, 2019 00:00:00 EDT'),
+                icon: null,
+                attachments: [
+                    {
+                        type: EventAttachmentType.url,
+                        value: 'https://www.usgamer.net/articles/collegiate-hearthstone-players-hold-up-free-hong-kong-boycott-blizzard-sign-during-match',
+                        label: 'US Gamer Report',
+                    },
+                ],
+            },
+            {
+                name: 'Hearthstone Caster Nathan "Admirable" Zamora Quits in Protest',
+                text: 'Nathan Zamora, known also as "Admirable", releases a statement that he "cannot continue casting [Hearthstone]" without "change that would convince [him] that Blizzard will uphold their core of value of \'Every Voice Matters\'".',
+                condensed: true,
+                time: new Date('Oct 10, 2019 18:57:00 EDT'),
+                icon: null,
+                attachments: [
+                    {
+                        type: EventAttachmentType.url,
+                        value: 'https://twitter.com/ThatsAdmirable/status/1182429866576138240',
+                        label: 'Original Twitter Post',
+                    },
+                ],
+            },
+            {
                 name: 'Riot Games Asks Players to Not Discuss Hong Kong',
                 text: 'John Needham, Global Head of League of Legends eSports, posts an open letter asking both casters and players to not discuss sensitive or political topics such as Hong Kong on the air.',
                 condensed: true,
@@ -227,6 +274,25 @@ export default class TimelineEventsRepository {
                         type: EventAttachmentType.url,
                         value: 'https://twitter.com/NintendoNYC/status/1183940424467173378?ref_src=twsrc%5Etfw',
                         label: 'Original Twitter Post',
+                    },
+                ],
+            },
+            {
+                name: 'American University Collegiate Hearthstone Team Suspended',
+                text: 'The American University Hearthstone Collegiate team, who earlier had held up a sign during their match that read "Free Hong Kong, Boycott Blizzard", and forfeited the tournament to protest their lack of punishment, is quietly suspended by Blizzard for six months. Team member Casey Chambers tweets that he "appreciate[s] all players being treated equally".',
+                condensed: true,
+                time: new Date('October 16, 2019 01:01:00 EDT'),
+                icon: null,
+                attachments: [
+                    {
+                        type: EventAttachmentType.url,
+                        value: 'https://twitter.com/Xcelsior_GU/status/1184333609370619905',
+                        label: 'Original Twitter Post',
+                    },
+                    {
+                        type: EventAttachmentType.url,
+                        value: 'https://www.pcgamer.com/hearthstone-collegiate-team-that-held-up-a-free-hong-kong-sign-has-been-suspended/',
+                        label: 'PCGamer Report',
                     },
                 ],
             },
