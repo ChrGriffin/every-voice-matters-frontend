@@ -114,6 +114,7 @@
             border: $timelineWidth solid $red;
             position: absolute;
             top: calc(50% - (#{$eventDotSize} / 2));
+            pointer-events: none;
         }
 
         .icon {
