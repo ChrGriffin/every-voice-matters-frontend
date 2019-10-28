@@ -13,6 +13,7 @@
 
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
+    import { page } from 'vue-analytics';
     import MainNav from '@/components/MainNav.vue';
     import SiteHero from '@/components/SiteHero.vue';
     import SummarySection from '@/components/SummarySection.vue';
@@ -33,5 +34,8 @@
         },
     })
     export default class Home extends Vue {
+        private mounted() {
+            page('/');
+        }
     }
 </script>
