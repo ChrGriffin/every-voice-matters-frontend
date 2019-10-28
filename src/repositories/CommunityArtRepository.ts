@@ -220,6 +220,14 @@ export default class CommunityArtRepository {
                     url: 'https://www.reddit.com/user/antediluvianevil/',
                 },
             },
+            {
+                image: 'https://i.redd.it/vpg57yspi7v31.jpg',
+                description: 'Solder: 76 and Ana with fists raised, supporting Hong Kong',
+                author: {
+                    name: 'fenster112',
+                    url: 'https://www.reddit.com/user/fenster112/',
+                },
+            },
         ];
     }
 }
