@@ -224,8 +224,32 @@ export default class CommunityArtRepository {
                 image: 'https://i.redd.it/vpg57yspi7v31.jpg',
                 description: 'Solder: 76 and Ana with fists raised, supporting Hong Kong',
                 author: {
-                    name: 'fenster112',
-                    url: 'https://www.reddit.com/user/fenster112/',
+                    name: '@fenster112',
+                    url: 'https://www.instagram.com/fenster112/',
+                },
+            },
+            {
+                image: 'https://res.cloudinary.com/dqqlm018i/image/upload/v1572308486/every_voice_matters/Instagram7_xnktgv.png',
+                description: 'Mei with a gas mask',
+                author: {
+                    name: '@kirstinadamsbimson',
+                    url: 'https://www.instagram.com/kirstinadamsbimson/',
+                },
+            },
+            {
+                image: 'https://res.cloudinary.com/dqqlm018i/image/upload/v1572308485/every_voice_matters/Instagram4_vi452l.png',
+                description: 'The Hearthstone logo with the Hong Kong logo in the center',
+                author: {
+                    name: '@kirstinadamsbimson',
+                    url: 'https://www.instagram.com/kirstinadamsbimson/',
+                },
+            },
+            {
+                image: 'https://res.cloudinary.com/dqqlm018i/image/upload/v1572312131/every_voice_matters/Blizzard_Notepad_Markup_Proof_2_oyaxxr.jpg',
+                description: 'A spoofed Blizzard note with Blizzard\'s core values crossed out and commented on by Bobby Kotick',
+                author: {
+                    name: '@kirstinadamsbimson',
+                    url: 'https://www.instagram.com/kirstinadamsbimson/',
                 },
             },
         ];
