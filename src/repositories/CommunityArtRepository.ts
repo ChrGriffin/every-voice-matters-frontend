@@ -256,8 +256,8 @@ export default class CommunityArtRepository {
                 image: 'https://preview.redd.it/jons61e7l2s31.png?width=960&crop=smart&auto=webp&s=da1ccf9af4687581801bf1866ae99dbde6b78dd3',
                 description: 'Mei holding an umbrella and wearing a face mask',
                 author: {
-                    name: 'Raptorleaf',
-                    url: 'https://www.reddit.com/user/Raptorleaf/',
+                    name: '@raptorleaf',
+                    url: 'https://www.instagram.com/raptorleaf/',
                 },
             },
             {
