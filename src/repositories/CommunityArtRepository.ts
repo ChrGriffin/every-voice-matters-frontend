@@ -293,7 +293,7 @@ export default class CommunityArtRepository {
                 },
             },
             {
-                image: 'https://pbs.twimg.com/media/EGbbe90WkAAm2X9?format=jpg&name=4096x4096',
+                image: 'https://res.cloudinary.com/dqqlm018i/image/upload/v1572361009/every_voice_matters/EGbbe90WkAAm2X9_k0pyha.jpg',
                 description: 'Mei glaring with the text "Liberate Hong Kong, Revolution of Our Times',
                 author: {
                     name: '@lemongraceful',
