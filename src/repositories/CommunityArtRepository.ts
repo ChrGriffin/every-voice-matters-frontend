@@ -228,6 +228,70 @@ export default class CommunityArtRepository {
                     url: 'https://www.reddit.com/user/fenster112/',
                 },
             },
+            {
+                image: 'https://preview.redd.it/wg5wbox2x7s31.png?width=960&crop=smart&auto=webp&s=04270ae4b2abe4e1548afaaa2d97a07e71f48848',
+                description: 'Mei crouching down with a face mask and an umbrella',
+                author: {
+                    name: 'wowtragic',
+                    url: 'https://www.reddit.com/user/wowtragic/',
+                },
+            },
+            {
+                image: 'https://preview.redd.it/6s87nooub6s31.png?width=640&crop=smart&auto=webp&s=3afaf062507515b758aa399a9df893370d2e74b4',
+                description: 'A Gnome holding a Hong Kong flag with her hair',
+                author: {
+                    name: 'Dravvie',
+                    url: 'https://www.reddit.com/user/Dravvie/',
+                },
+            },
+            {
+                image: 'https://preview.redd.it/8t2cv3xkc4s31.jpg?width=960&crop=smart&auto=webp&s=7ca791734e3639646eba975a42d011624a6c93cb',
+                description: 'Mei wearing a Free HK shirt',
+                author: {
+                    name: '@scribblesquibble',
+                    url: 'https://www.instagram.com/scribblesquibble/',
+                },
+            },
+            {
+                image: 'https://preview.redd.it/jons61e7l2s31.png?width=960&crop=smart&auto=webp&s=da1ccf9af4687581801bf1866ae99dbde6b78dd3',
+                description: 'Mei holding an umbrella and wearing a face mask',
+                author: {
+                    name: 'Raptorleaf',
+                    url: 'https://www.reddit.com/user/Raptorleaf/',
+                },
+            },
+            {
+                image: 'https://preview.redd.it/l7gw55lxh4s31.jpg?width=960&crop=smart&auto=webp&s=bce621f42ec73649bc898e17f0faac3b1132df00',
+                description: 'Mei encouraging Hong Kongers to "hang in there"',
+                author: {
+                    name: 'lonku',
+                    url: 'https://www.reddit.com/user/lonku/',
+                },
+            },
+            {
+                image: 'https://preview.redd.it/nopf2pbjp4s31.jpg?width=640&crop=smart&auto=webp&s=7e313fba84fe1f553ca3add22fcbdd316db251df',
+                description: 'Mei with an umbrella next to a communist flag with the communist logo crossed out',
+                author: {
+                    name: 'Wertzuk',
+                    url: 'https://www.reddit.com/user/Wertzuk/',
+                },
+            },
+            {
+                image: 'https://preview.redd.it/jabahug7l2s31.jpg?width=640&crop=smart&auto=webp&s=e01613b4d93a620f5b479c31fb5887bab4158395',
+                description: 'A stencil of Mei with the Hong Kong symbol',
+                author: {
+                    name: 'sandwiches666',
+                    url: 'https://www.reddit.com/user/sandwiches666/',
+                },
+            },
+            {
+                image: 'https://external-preview.redd.it/z-PCeAZ4GzopvrbzNQNtMq-ktVGKjxnMAnNY13x4kJ8.jpg?width=960&crop=smart&auto=webp&s=215a4628ae399a8c4edd8fd8d23cfc14c1a9fbff',
+                description: 'Tianmen square "Tank man" photoshopped to be standing in front of a Warcraft siege tank',
+                author: {
+                    name: 'Julioscoundrel',
+                    url: 'https://www.reddit.com/user/Julioscoundrel/',
+                },
+            },
         ];
     }
 }
