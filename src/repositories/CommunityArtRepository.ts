@@ -296,7 +296,7 @@ export default class CommunityArtRepository {
                 image: 'https://pbs.twimg.com/media/EGbbe90WkAAm2X9?format=jpg&name=4096x4096',
                 description: 'Mei glaring with the text "Liberate Hong Kong, Revolution of Our Times',
                 author: {
-                    name: 'lemongraceful',
+                    name: '@lemongraceful',
                     url: 'https://twitter.com/lemongraceful/',
                 },
             },
