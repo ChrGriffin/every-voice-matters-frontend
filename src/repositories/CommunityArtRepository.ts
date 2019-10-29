@@ -240,8 +240,8 @@ export default class CommunityArtRepository {
                 image: 'https://preview.redd.it/6s87nooub6s31.png?width=640&crop=smart&auto=webp&s=3afaf062507515b758aa399a9df893370d2e74b4',
                 description: 'A Gnome holding a Hong Kong flag with her hair',
                 author: {
-                    name: 'Dravvie',
-                    url: 'https://www.reddit.com/user/Dravvie/',
+                    name: '@Dravvie',
+                    url: 'https://twitter.com/Dravvie',
                 },
             },
             {
