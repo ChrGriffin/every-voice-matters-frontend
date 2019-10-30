@@ -320,6 +320,25 @@ export default class TimelineEventsRepository {
                     },
                 ],
             },
+            {
+                name: 'Mitsubishi Pulls Blizzard Sponsorship',
+                text: 'Mitsubishi Motors Taiwan releases a statement that it has officially withdrawn its sponsorship of Blizzard eSports events. The actual withdrawal of sponsorship occurred earlier in the month.',
+                condensed: false,
+                time: new Date('October 29, 2019 17:34:00 EDT'),
+                icon: require('../assets/images/mitsubishi.svg'),
+                attachments: [
+                    {
+                        type: EventAttachmentType.url,
+                        value: 'https://www.theverge.com/2019/10/29/20939236/blizzard-china-hong-kong-protests-mitsubishi-hearthstone-ban-sponsorship-pulled',
+                        label: 'The Verge Report'
+                    },
+                    {
+                        type: EventAttachmentType.url,
+                        value: 'https://www.thedailybeast.com/blizzard-sponsor-mitsubishi-bailed-after-the-company-punished-pro-hong-kong-gamer-blitzchung?ref=wrap',
+                        label: 'The Daily Beast Report'
+                    }
+                ]
+            }
         ];
     }
 }
