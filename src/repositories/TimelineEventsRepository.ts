@@ -340,7 +340,7 @@ export default class TimelineEventsRepository {
                 ],
             },
             {
-                name: 'J. Allen Brack Apologizes for Controversy and Promises to do Better',
+                name: 'J. Allen Brack Apologizes',
                 text: 'The president of Blizzard Entertainment opens BlizzCon 2019 by addressing the controversy. While he does not directly refer to Hong Kong, China, or Blitzchung, he acknowledges that Blizzard "did not live up to the high standards that they set for [themselves]", and he apologizes and "accepts accountability".',
                 condensed: false,
                 time: new Date('November 1, 2019 14:06:00 EDT'),
