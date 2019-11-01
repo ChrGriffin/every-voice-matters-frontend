@@ -330,15 +330,34 @@ export default class TimelineEventsRepository {
                     {
                         type: EventAttachmentType.url,
                         value: 'https://www.theverge.com/2019/10/29/20939236/blizzard-china-hong-kong-protests-mitsubishi-hearthstone-ban-sponsorship-pulled',
-                        label: 'The Verge Report'
+                        label: 'The Verge Report',
                     },
                     {
                         type: EventAttachmentType.url,
                         value: 'https://www.thedailybeast.com/blizzard-sponsor-mitsubishi-bailed-after-the-company-punished-pro-hong-kong-gamer-blitzchung?ref=wrap',
-                        label: 'The Daily Beast Report'
-                    }
-                ]
-            }
+                        label: 'The Daily Beast Report',
+                    },
+                ],
+            },
+            {
+                name: 'J. Allen Brack Apologizes for Controversy and Promises to do Better',
+                text: 'The president of Blizzard Entertainment opens BlizzCon 2019 by addressing the controversy. While he does not directly refer to Hong Kong, China, or Blitzchung, he acknowledges that Blizzard "did not live up to the high standards that they set for [themselves]", and he apologizes and "accepts accountability".',
+                condensed: false,
+                time: new Date('November 1, 2019 14:06:00 EDT'),
+                icon: require('../assets/images/blizzard.svg'),
+                attachments: [
+                    {
+                        type: EventAttachmentType.url,
+                        value: 'https://clips.twitch.tv/DarkBlitheGrasshopperPeoplesChamp',
+                        label: 'Twitch Clip',
+                    },
+                    {
+                        type: EventAttachmentType.url,
+                        value: 'https://www.youtube.com/watch?v=CscJ58tRcEo',
+                        label: 'YouTube Video',
+                    },
+                ],
+            },
         ];
     }
 }
