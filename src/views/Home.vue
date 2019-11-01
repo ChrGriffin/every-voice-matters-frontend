@@ -3,10 +3,8 @@
         <main-nav/>
         <site-hero/>
         <summary-section/>
-        <announcement-section text="11/01: Protest at BlizzCon" url="https://www.gamersforfreedom.com/#blizzcon" />
         <time-line-section/>
         <support-section/>
-        <announcement-section text="11/01: Protest at BlizzCon" url="https://www.gamersforfreedom.com/#blizzcon" />
         <community-art-section/>
     </div>
 </template>
