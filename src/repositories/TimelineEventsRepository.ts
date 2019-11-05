@@ -358,6 +358,34 @@ export default class TimelineEventsRepository {
                     },
                 ],
             },
+            {
+                name: 'Protests Outside BlizzCon',
+                text: 'Dozens of protestors demonstrate outside of BlizzCon before the opening ceremony and during the second day of the convention. The protest setup - which includes Hong Kong flags and a box truck with an enormous sign on the back - hands out free tee shirts featuring a popular image of Mei supporting Hong Kong.',
+                condensed: true,
+                time: new Date('November 1, 2019 13:09:00 EDT'),
+                icon: null,
+                attachments: [
+                    {
+                        type: EventAttachmentType.url,
+                        value: 'https://www.polygon.com/2019/11/1/20943761/hong-kong-protests-blizzcon-2019-blitzchung',
+                        label: 'Polygon Report',
+                    },
+                ],
+            },
+            {
+                name: 'Q&A Panel Briefly Interrupted by Protestor',
+                text: 'One of the fans asking a question at the World of Warcraft Q&A panel concludes his question with the slogan, "Free Hong Kong, revolution of our times". As he finishes his statement, a younger fan from the audience shouts the same, dashes to the mic, and states it into the microphone.',
+                condensed: true,
+                time: new Date('November 2, 2019 17:15:00 EDT'),
+                icon: null,
+                attachments: [
+                    {
+                        type: EventAttachmentType.url,
+                        value: 'https://www.youtube.com/watch?v=1rcgIukAMo8',
+                        label: 'YouTube Video',
+                    },
+                ],
+            },
         ];
     }
 }
