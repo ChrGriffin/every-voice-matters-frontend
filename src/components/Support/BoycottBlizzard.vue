@@ -11,7 +11,7 @@
         <ul>
             <li><strong>Spread awareness</strong>. You may have to put on your tinfoil hat for this one, but Tencent (the Chinese national corporation that owns 5% of Blizzard Activision) is heavily invested in multiple western tech companies, such as Reddit. Be aware that forum posts, VODs, etc. may mysteriously 'disappear' from time to time. Do not let up and do not become complacent simply because it seems like everyone is talking about this issue. Be aware of the echo chamber you may be shouting into, and spread awareness elsewhere.</li>
             <li><strong>Create more community art.</strong> Mei has become a symbol of both the Hong Kong protests and Blizzard's betrayal amongst Western gamers, and Blizzard's own games are replete with examples of heroic characters who would fight for Hong Kong. Art can make a powerful statement, especially art crafted by a community that has risen above the company that fostered it.</li>
-            <li>Lastly, and most importantly: <strong>Do not forget</strong>. Blizzard's strategy for dealing with the PR nightmare seems to be the most historically reliable: hunker down and wait for it all to blow over. With BlizzCon coming up and rumours of Diablo 4 on the horizon, do not allow Blizzard to sweep their offense under the rug with a wave of hype. Remember what they did, and remember that they would sell you out in a second if it paid better than keeping you as a customer.</li>
+            <li>Lastly, and most importantly: <strong>Do not forget</strong>. J. Allen Brack may have apologized at BlizzCon and promised to do better, but a promise is just words. Stay vigilant and keep a watchful eye on how Blizzard behaves in the future.</li>
         </ul>
     </div>
 </template>
