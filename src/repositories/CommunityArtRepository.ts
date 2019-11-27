@@ -165,7 +165,7 @@ export default class CommunityArtRepository {
                 },
             },
             {
-                image: 'https://preview.redd.it/jjsj81t9sxt31.jpg?width=640&crop=smart&auto=webp&s=a5e3a5cee968c2635c60046fea22707d1a4bf2ff',
+                image: 'https://i.redd.it/zsxkybgx8xr31.jpg',
                 description: 'D.va in a gas mask holding a Hong Kong flag',
                 author: {
                     name: 'PaulTheAquarist',
