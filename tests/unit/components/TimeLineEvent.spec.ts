@@ -133,10 +133,6 @@ describe('TimeLineEvent.vue', () => {
         expect(url).toBeTruthy();
         expect(url.getAttribute('href')).toBe('https://www.geralt-rivia.of');
         expect(url.innerHTML).toBe('Original Link');
-
-        expect(image).toBeTruthy();
-        expect(image.getAttribute('src')).toBe('https://www.geralt-rivia.of/yennefer.jpg');
-        expect(image.getAttribute('alt')).toBe('A descriptive alt tag.');
     });
 
     it('displays the event icon if the event is uncondensed', () => {
