@@ -134,7 +134,7 @@ describe('ContactForm.vue', () => {
 
         expect(axiosMock.history.post.length).toBe(1);
         expect(axiosMock.history.post[0].data)
-            .toBe(JSON.stringify({ name, email, message }));
+            .toContain(encodeURI(`name=${name}`));
     });
 
     it('displays a loading indicator instead of the form while the form is submitting', async () => {
