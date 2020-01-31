@@ -261,14 +261,6 @@ export default class CommunityArtRepository {
                 },
             },
             {
-                image: 'https://preview.redd.it/6s87nooub6s31.png?width=640&crop=smart&auto=webp&s=3afaf062507515b758aa399a9df893370d2e74b4',
-                description: 'A Gnome holding a Hong Kong flag with her hair',
-                author: {
-                    name: '@Dravvie',
-                    url: 'https://twitter.com/Dravvie',
-                },
-            },
-            {
                 image: 'https://preview.redd.it/8t2cv3xkc4s31.jpg?width=960&crop=smart&auto=webp&s=7ca791734e3639646eba975a42d011624a6c93cb',
                 description: 'Mei wearing a Free HK shirt',
                 author: {
