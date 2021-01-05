@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@types/sinon": "^7.5.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "blear.scss.clearfix": "^1.0.1",
     "core-js": "^2.6.5",
     "css-reset-and-normalize": "^2.1.0",
